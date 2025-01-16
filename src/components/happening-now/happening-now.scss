@@ -1,0 +1,43 @@
+@keyframes revealFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.happening-now-wrapper-div {
+    background-color: var(--very-light-blue);
+    margin-top: 95px;
+    padding-bottom: 80px;
+    .happening-now-wrapper {
+        padding-top: 100px;
+        font-family: "DM Sans", sans-serif;
+        .happening-now-title {
+            font-family: "Playfair Display", sans-serif;
+            letter-spacing: -.1px;
+        }
+        .happening-p {
+            font-size: 1.2em;
+        }
+
+        .happening-now-title, .happening-p, .card-wrapper {
+            opacity: 0;
+            transform: translateY(100%);
+            will-change: transform, opacity;
+            transition: all 0.4s ease-out;
+        }
+
+        &.in-view {
+            .happening-now-title,
+            .happening-p, 
+            .card-wrapper {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.navbar{
+    height: 8vh;
+    // .navbar-toggler.collapsed {
+    //     color: white;
+    //     .navbar-toggler-icon {
+    //         color: white;
+    //     }
+    // }
+
+    .nav-link {
+        color: #ffffff;
+        font-family: 'DM Sans';
+    }
+    .nav-link.show, .nav-link:hover, .nav-link.active {
+        color: var(--primary) !important;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    }
+
+    .dropdown-menu.show {
+        border-top: 4px var(--primary) solid;
+        border-radius: 0px;
+    }
+}

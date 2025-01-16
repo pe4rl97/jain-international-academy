@@ -1,0 +1,49 @@
+@keyframes revealFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-us-wrapper {
+    margin-top: 80px;
+    .container {
+        font-family: "DM Sans", sans-serif;
+        .about-us-title {
+            font-family: "Playfair Display", sans-serif;
+            letter-spacing: -.1px;
+        }
+    
+        
+        .text-p {
+            color: #2c3a3a;
+            text-align: justify;
+            font-size: 20px;
+        }
+    
+        .img-fluid {
+            background-color: #fff2e1;
+        }
+    
+        .text-p, .img-fluid {
+            opacity: 0;
+            transform: translateY(100%);
+            will-change: transform, opacity;
+            transition: all 0.6s ease-out;
+        }
+    
+        &.in-view {
+            .text-p, .img-fluid {
+                opacity: 1 ;
+                transform: translateY(0);
+            }
+        }
+        
+    }
+
+}
+

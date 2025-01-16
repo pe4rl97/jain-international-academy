@@ -1,0 +1,55 @@
+@keyframes revealFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+:root {
+    --main-h1-font-size-large: 80px; 
+    --main-h1-font-size-medium: 70px; 
+    --main-h1-font-size-small: 45px; 
+    --main-h1-font-size-extra-small: 25px; 
+}
+
+.jumbo-header {
+    font-family: "Playfair Display", sans-serif;
+    font-size: var(--main-h1-font-size-large);
+    font-weight: 400;
+    line-height: 0.9;
+    color: white;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: revealFromBottom 0.4s ease-out forwards;
+    will-change: transform, opacity;
+}
+
+.text-center {
+    animation-delay: 0.2s; // Delay for the first <h1>
+}
+
+.text-end {
+    animation-delay: .5s; // Delay for the second <h1>
+}
+
+@media (max-width: 1200px) {
+    .jumbo-header {
+        font-size: var(--main-h1-font-size-medium);
+    }
+}
+
+@media (max-width: 768px) {
+    .jumbo-header {
+        font-size: var(--main-h1-font-size-small);
+    }
+}
+
+@media (max-width: 480px) {
+    .jumbo-header {
+        font-size: var(--main-h1-font-size-extra-small);
+    }
+}

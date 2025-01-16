@@ -1,0 +1,30 @@
+.custom-card {
+    .card-id {
+        background-color: var(--very-light-brown);
+        padding: 5px 5px;
+    }
+    
+    .card-title-custom {
+        text-align: left;
+        letter-spacing: -2px;
+        font-family: Playfair Display, sans-serif;
+        font-size: 30px;
+        font-style: italic;
+    }
+}
+@media (min-width: 768px) {
+    .custom-card {
+        height: 90vh;
+    }
+}
+
+@media (min-width: 992px) {
+    .custom-card {
+        height: 70vh;
+    }
+}
+@media (min-width: 1200px) {
+    .custom-card {
+        height: 65vh;
+    }
+}
