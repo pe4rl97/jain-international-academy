@@ -1,5 +1,5 @@
 import MainHeader from '../main-header/MainHeader'
-import NavBar from '../navbar/NavBar'
+import NavBar from '../light-navbar/NavBar'
 import './background-img.scss'
 
 const BackgroundImg = () => {

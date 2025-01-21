@@ -1,0 +1,28 @@
+.navbar{
+    height: 8vh;
+    .nav-link.dark{
+        font-weight: bold;
+        color: var(--dark-slate-grey);
+        font-family: 'DM Sans';
+    }
+    .nav-link.dark.show, .nav-link.dark:hover, .nav-link.dark.active {
+        color: black !important;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    }
+
+    #offcanvasNavbarDropdownDark {
+        color: black;
+        
+    }
+    #offcanvasNavbarDropdownDark.show, #offcanvasNavbarDropdownDark:hover {
+        color: black !important;
+        
+    }
+
+
+    .dropdown-menu.show {
+        border-top: 4px var(--dark-slate-grey) solid;
+        border-radius: 0px;
+    }
+}

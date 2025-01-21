@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.scss'
+import '../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css'
+import '../node_modules/aos/dist/aos.css';
 import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 

@@ -1,0 +1,55 @@
+.navbar {
+    height: 8vh;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color changes */
+
+    /* Add !important to ensure background color and text color are applied */
+    &.bg-white {
+        background-color: white !important;
+    }
+
+    &.text-dark {
+        color: black !important;
+    }
+
+    &.bg-transparent {
+        background-color: transparent !important;
+    }
+
+    &.text-white {
+        color: white !important;
+    }
+
+    .nav-link {
+        font-weight: bold;
+        color: #ffffff;
+        font-family: 'DM Sans';
+        transition: color 0.3s; /* Smooth color transition */
+    }
+
+    .nav-link.show,
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--very-light-blue) !important;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    }
+
+    /* Make sure the navbar items change text color correctly when navbar background color changes */
+    &.text-dark .nav-link {
+        color: black !important; /* Make sure text is black when scrolling */
+    }
+
+    &.text-white .nav-link {
+        color: white !important; /* Make sure text is white when at the top */
+    }
+
+    .dropdown-menu.show {
+        border-top: 4px var(--very-light-blue) solid;
+        border-radius: 0px;
+    }
+
+    // /* Optional: Add styles for the offcanvas menu if needed */
+    // .offcanvas-body {
+    //     background-color: #f8f9fa; /* Optional light background */
+    // }
+}

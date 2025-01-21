@@ -1,0 +1,21 @@
+.certificates-wrapper {
+    margin-bottom: 5rem;
+    background-color: var(--very-light-brown);
+    .certificate-heading {
+        font-family: "Playfair Display", sans-serif;
+        letter-spacing: -.1px;
+    }
+    .cards-container {
+        margin-top: -40px;
+    }
+
+    .card:hover {
+        transform: translateY(-20px);
+    }
+}
+
+@media (min-width:992px) {
+    .certificates-wrapper {
+        margin-top: 75rem;
+    }
+}

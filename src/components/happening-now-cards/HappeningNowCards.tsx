@@ -10,7 +10,7 @@ interface PropsType {
 
 const HappeningNowCards = ({ id, heading, image_url, text}: PropsType) => {
     return (
-        <Card className='border-0 p-3 custom-card mt-4'>
+        <Card className='border-0 p-3 custom-card mt-4 h-100'>
             <Card.Header className='bg-transparent border-bottom-0 mt-3'>
                 <Card.Subtitle><span className='card-id rounded-1 fw-bold'>0{id}</span></Card.Subtitle>
                 <Card.Title className='card-title-custom mt-3'>

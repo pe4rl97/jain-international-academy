@@ -1,5 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root {
   --primary: #30e3ca;
   --very-light-blue: #e7f5f5;
   --very-light-brown: #f0e2d0;
+  --dark-slate-grey: #2c3a3a;
+}
+
+body {
+  overflow-x: hidden;
 }
