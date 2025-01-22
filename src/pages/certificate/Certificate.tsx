@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import NavBar from "../components/dark-navbar/NavBar";
+import NavBar from "../../components/dark-navbar/NavBar";
+import './certificate.scss'
 
 const Certificate: React.FC = () => {
   const location = useLocation();
@@ -16,7 +17,7 @@ const Certificate: React.FC = () => {
     const name = params.get("name") || "";
     const imagelink = params.get("imageLink") || "";
     const pdflink = params.get("pdfLink") || "";
-    console.log(params.get('imageLink'));
+
     setPdfName(name);
     setImageLink(imagelink);
     setPdfLink(pdflink);
@@ -27,10 +28,7 @@ const Certificate: React.FC = () => {
   }, [location.search]);
 
   return (
-    <div className="p-0 m-0">
-      {/* Background */}
-      <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-
+    <div className="certificate-wrapper">
       {/* Header */}
       <header className="bg-white sticky top-0 shadow-sm">
         <NavBar/>
@@ -40,11 +38,11 @@ const Certificate: React.FC = () => {
       <main>
         {/* PDF Section */}
         <Container className="text-center my-5">
-          <h2 className="my-4">{pdfName}</h2>
+          <h2 className="mb-4 pdf-name-title"><span className="bg-white">{pdfName}</span></h2>
           <Row className="justify-content-center">
             <Col md={6}>
               <a href={pdfLink} target="_blank" rel="noopener noreferrer">
-                <Image src={imageLink} alt={pdfName} fluid className={`shadow ${isMandatoryDisclosure ? "mb-4" : ""}`} />
+                <Image src={imageLink} alt={pdfName} fluid className={`shadow certificate-img ${isMandatoryDisclosure ? "mb-4" : ""}`}/>
               </a>
               <p className="text-muted">*Click the image to open/download the PDF file.</p>
             </Col>

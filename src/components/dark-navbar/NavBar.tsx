@@ -25,9 +25,9 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
     return (
         // <Container className="pt-3">
-            <Navbar fixed='top' expand='md' className="rounded bg-white">
+            <Navbar fixed='top' expand='md' className="rounded bg-white shadow">
                 <Container>
-                    <Navbar.Brand href="/">
+                    <Navbar.Brand as={Link} to="/">
                         <span className="fw-bold h5">JIPS</span>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -43,9 +43,9 @@ const NavBar = () => {
                     </Offcanvas.Header>
                         <Offcanvas.Body className="ms-4">
                         <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link as={Link} to="/home" className="me-2 dark">HOME</Nav.Link>
-                                <Nav.Link href="/#about-us" className="me-2 dark">ABOUT US</Nav.Link>
-                                <Nav.Link href="/home#gallery-images" className="me-2 dark">GALLERY</Nav.Link>
+                                <Nav.Link as={Link} to="/" className="me-2 dark">HOME</Nav.Link>
+                                <Nav.Link as={Link} to="/#about-us" className="me-2 dark">ABOUT US</Nav.Link>
+                                <Nav.Link as={Link} to="/#gallery-images" className="me-2 dark">GALLERY</Nav.Link>
                                 <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdownDark" className="me-2 rounded-0 text-dark">
                                     <NavDropdown.Item as={Link} to={`/certificate?name=Certificate of Registration&imageLink=${certificateOfRegistrationImg}&pdfLink=${certificateOfRegistrationPdf}`} className="mb-2 dark">Certificate of Registration</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to={`/certificate?name=Building Safety Certificate&imageLink=${buildingSafetyCertificateImg}&pdfLink=${buildingSafetyCertificatePdf}`} className="mb-2 dark">Building Safety Certificate</NavDropdown.Item>
@@ -58,7 +58,7 @@ const NavBar = () => {
                                     <NavDropdown.Item as={Link} to={`/certificate?name=Self Declaration&imageLink=${selfDeclarationImg}&pdfLink=${selfDeclarationPdf}`} className="mb-2 dark">Self Declaration</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to={`/certificate?name=School Management Committee&imageLink=${schoolManagementCommitteeImg}&pdfLink=${schoolManagementCommitteePdf}`} className="mb-2 dark">School Management Committee</NavDropdown.Item>
                                 </NavDropdown>
-                                <Nav.Link as={Link} to="/home#contact-us" className="me-2 dark">CONTACT US</Nav.Link>
+                                <Nav.Link as={Link} to="/#contact-us" className="me-2 dark">CONTACT US</Nav.Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>

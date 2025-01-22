@@ -2,23 +2,23 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import logo from '../../assets/logo-transparentbg.png';
 import './footer.scss';
+import { Link } from 'react-scroll'
 
 const Footer = () => {
     
     return (
         <>
-            <footer className="footer">
+            <footer className="footer pb-2">
                 <div className='ctu-container'>
                     <Container>
                         <h1 className='ctu-container-text p-5' data-aos='fade-up' data-aos-delay='100'>We’re here to help you shape the future.</h1>
                     </Container>
-
                 </div>
                 <Container className='footer-container'>
-                    <Row className='justify-content-between'>
+                    <Row className='justify-content-between align-content-center'>
                         <Col md='5' xs='11' className='mb-4'>
-                            <Row className='justify-content-center g-0'>
-                                <Col md='2' xs='4'>
+                            <Row className='justify-content-around g-0'>
+                                <Col md='2' xs='4' className='ms-3'>
                                     <a href='#'>
                                         <img src={logo} alt='logo' className='img-fluid'/>
                                     </a>
@@ -78,27 +78,27 @@ const Footer = () => {
                         <Col md='3' xs='11' className='text-start mb-4'>
                             <h2 className='heading-school'>Our School</h2>
                             <div>
-                                <a href='#' className='text-white links'>Home</a>
+                                <Link to='/' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='text-white menu-links'>Home</Link>
                             </div>
                             <div>
-                                <a href='#about-us' className='text-white links'>About us</a>
+                                <Link to='about-us' smooth={true} duration={500} className='text-white menu-links'>About us</Link>
                             </div>
                             <div>
-                                <a href='#certificates' className='text-white links'>Certificates</a>
+                                <Link to='certificates' smooth={true} duration={500} offset={-40} className='text-white menu-links'>Certificates</Link>
                             </div>
                             <div>
-                                <a href='#gallery-images' className='text-white links'>Gallery</a>
+                                <Link to='gallery-images' smooth={true} duration={500} className='text-white menu-links'>Gallery</Link>
                             </div>
                             <div>
-                                <a href='#contact-us' className='text-white links'>Contact Us</a>
+                                <Link to='contact-us' smooth={true} duration={500} className='text-white menu-links'>Contact Us</Link>
                             </div>
                         </Col>
-                        <Col md='3' xs='11' className='text-start'>
+                        <Col md='3' xs='11' className='text-start mb-4 contact-details-col'>
                             <h2 className='heading-school'>Contact Details</h2>
                             <div>
-                                <div className='text-white'>Near Dutt Temple, Dharampur road, Pathri, Chanvai, Valsad-396001, Gujarat</div>
-                                <a href= "mailto:jipsschoolvalsad@gmail.com" className='text-white' style={{overflow:'ellipsis'}}>jipsschoolvalsad@gmail.com</a>
-                                <div className='text-white'>
+                                <div className='text-white mb-2' style={{lineHeight:'1.6'}}>Near Dutt Temple, Dharampur road, Pathri, Chanvai, Valsad-396001, Gujarat</div>
+                                <a href= "mailto:jipsschoolvalsad@gmail.com" className='text-white'>jipsschoolvalsad@gmail.com</a>
+                                <div className='text-white mt-3'>
                                     99256 51745
                                 </div>
                                 <div className='text-white'>

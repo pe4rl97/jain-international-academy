@@ -42,14 +42,4 @@
     &.text-white .nav-link {
         color: white !important; /* Make sure text is white when at the top */
     }
-
-    .dropdown-menu.show {
-        border-top: 4px var(--very-light-blue) solid;
-        border-radius: 0px;
-    }
-
-    // /* Optional: Add styles for the offcanvas menu if needed */
-    // .offcanvas-body {
-    //     background-color: #f8f9fa; /* Optional light background */
-    // }
 }

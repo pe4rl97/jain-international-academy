@@ -22,6 +22,7 @@ import schoolManagementCommitteePdf from '../../assets/certificates/School Manag
 import schoolManagementCommitteeImg from '../../assets/certificates/School Management Committee.jpg'
 import { FaFileAlt } from "react-icons/fa";
 import './certificates.scss'
+import { Link } from "react-router-dom";
 
 const certificates = [
     {
@@ -78,9 +79,8 @@ const certificates = [
 
 const Certificates: React.FC = () => {
   return (
-    <section className="certificates-wrapper pb-5">
+    <section className="certificates-wrapper pb-5" id="certificates">
         <h1
-            id="certificates"
             className="text-center my-4 my-md-5 p-5 certificate-heading"
         >
             Certificates
@@ -95,8 +95,8 @@ const Certificates: React.FC = () => {
                 xs={12}
                 className="mb-4"
                 >
-                <a
-                    href={`/certificate?name=${certificate.name}&imageLink=${certificate.imagelink}
+                <Link
+                    to={`/certificate?name=${certificate.name}&imageLink=${certificate.imagelink}
                     &pdfLink=${certificate.pdflink}`}
                     className="text-decoration-none"
                 >
@@ -108,7 +108,7 @@ const Certificates: React.FC = () => {
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                </a>
+                </Link>
                 </Col>
             ))}
             </Row>

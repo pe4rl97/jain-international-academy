@@ -5,7 +5,7 @@ const ContactUs = () => {
     return (
         <section id="contact-us" className="contact-us-wrapper">
             <Container className="contact-us-container">
-                <h1 className="contact-us-heading" data-aos='fade-in'>Get In Touch</h1>
+                <h1 className="contact-us-heading" data-aos='fade-in'><span className="bg-white">Get In Touch</span></h1>
                 <Row className='justify-content-between mt-5 align-items-center'>
                     <Col md='5' xs='11' data-aos='fade-right' data-aos-delay='100'>
                         <Row>

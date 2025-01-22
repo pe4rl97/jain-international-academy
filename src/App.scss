@@ -10,6 +10,26 @@ html {
   --dark-slate-grey: #2c3a3a;
 }
 
-body {
+html, body {
   overflow-x: hidden;
+}
+
+body {
+  background-image: url('./assets/school-svg-9.svg');
+  background-color: #ffffffdf;
+  background-blend-mode: color;
+  background-size: contain;  
+  background-repeat: repeat-y;
+  background-position: top center;
+  // Adjust the background image for smaller screens
+  
+  @media (max-width: 768px) {
+      background-size: contain; // Ensure the entire image fits
+      background-position: center; // Center the image
+      background-repeat: repeat-y;
+  }
+
+  @media (max-width: 576px) {
+      height: auto; // Allow the section to adjust height based on content
+  }
 }

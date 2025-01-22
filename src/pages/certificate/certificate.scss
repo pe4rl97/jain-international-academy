@@ -1,0 +1,25 @@
+
+.pdf-name-title {
+    margin-top: 7rem;
+}
+
+.certificate-img {
+    height: auto;
+}
+
+@media (min-width: 992px) {
+    .certificate-img {
+        height: 75vh;
+    }
+
+    .pdf-name-title {
+        margin-top: 8rem;
+    }
+} 
+
+@media (min-width: 1802px) {
+    .pdf-name-title {
+        margin-top: 8rem;
+    }
+}
+
