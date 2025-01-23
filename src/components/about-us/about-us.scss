@@ -7,7 +7,14 @@
             font-family: "DM Sans", sans-serif;
             .about-us-title {
                 padding-top: 7rem;
-                font-family: "Playfair Display", sans-serif;
+                font-family: 'Lobster Two', cursive;
+                font-weight: 600;
+                letter-spacing: -.1px;
+            }
+
+            .become-a-school-title {
+                font-family: 'Lobster Two', cursive;
+                font-weight: 600;
                 letter-spacing: -.1px;
             }
         
@@ -20,6 +27,15 @@
         
             .img-fluid {
                 background-color: #fff2e1;
+            }
+
+            .about-img {
+                .img-hover {
+                    transition: .5s ease;
+                }
+                .img-hover:hover {
+                    background-color: var(--bs-primary) !important;
+                }
             }
             
         }

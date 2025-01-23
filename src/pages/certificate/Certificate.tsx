@@ -31,16 +31,12 @@ const Certificate: React.FC = () => {
 
   return (
     <div className="certificate-wrapper">
-      {/* Header */}
-      <header className="bg-white sticky top-0 shadow-sm">
-        <NavBar/>
-      </header>
 
       {/* Main Section */}
       <main>
         {/* PDF Section */}
         <Container className="text-center my-5">
-          <h2 className="mb-4 pdf-name-title"><span className="bg-white">{pdfName}</span></h2>
+          <h1 className="mb-4 pdf-name-title"><span className="bg-white">{pdfName}</span></h1>
           <Row className="justify-content-center">
             <Col md={6}>
               <a href={pdfLink} target="_blank" rel="noopener noreferrer">

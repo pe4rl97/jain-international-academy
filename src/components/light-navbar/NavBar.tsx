@@ -26,28 +26,39 @@ import { useCallback, useEffect, useState } from "react"
 import logo from '../../assets/logo-transparentbg.png'
 
 const NavBar = () => {
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolledTransparent, setScrolledTransparent] = useState(false);
+    const [scrolledTransparentHalf, setScrolledTransparentHalf] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
     const [showOffcanvas, setShowOffcanvas] = useState(false);
 
     const handleScroll = useCallback(() => {
-        if (window.scrollY > window.innerHeight * 0.9) {
-            setScrolled(true);
+        const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+    
+        if (scrollY > viewportHeight * 0.9) {
+            setScrolledTransparent(true);
+            setScrolledTransparentHalf(false);
+        } else if (scrollY > viewportHeight * 0.15) {
+            setScrolledTransparent(false);
+            setScrolledTransparentHalf(true);
         } else {
-            setScrolled(false);
+            setScrolledTransparent(false);
+            setScrolledTransparentHalf(false);
         }
-        // Check visible section
+    
+        // Check visible section (already included in your code)
         const sections = document.querySelectorAll("section");
         let currentSection = "home"; // Default to home if no section matches
         sections.forEach((section) => {
             const sectionTop = section.offsetTop - 100; // Adjust offset as needed
             const sectionHeight = section.offsetHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                 currentSection = section.getAttribute("id") || activeSection;
             }
         });
         setActiveSection(currentSection);
     }, [activeSection]);
+    
 
     const handleCloseOffcanvas = () => setShowOffcanvas(false);
     const handleShowOffcanvas = () => setShowOffcanvas(true);
@@ -61,16 +72,22 @@ const NavBar = () => {
 
     return (
         // <Container className="pt-3">
-            <Navbar 
-                fixed='top'
-                expand='md'
-                className={`rounded-bottom ${scrolled ? 'bg-white text-dark shadow' : 'bg-transparent'}`}
+            <Navbar
+                fixed="top"
+                expand="xl"
+                className={`rounded-bottom ${
+                    scrolledTransparent
+                        ? 'bg-white text-dark shadow'
+                        : scrolledTransparentHalf
+                        ? 'blurred-bg'
+                        : 'bg-transparent'
+                }`}
             >
                 <Container>
                     <Navbar.Brand as={Link} to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                         <span><img src={logo} height={40} className="me-3"/></span>
-                        <span className={`fw-bold h5 ${scrolled ? 'd-none': 'text-white'}`}>JIPS</span>
-                        <span className={`fw-bold h5 ${scrolled ? 'text-black': 'd-none'}`}>
+                        <span className={`fw-bold h5 ${scrolledTransparent ? 'd-none': 'text-white'}`}>JIPS</span>
+                        <span className={`fw-bold h5 ${scrolledTransparent ? 'text-black': 'd-none'}`}>
                             <span className="d-md-inline d-none">Jain International Public School</span>
                             <span className="d-inline d-md-none">JIPS</span>
                         </span>
@@ -98,7 +115,7 @@ const NavBar = () => {
                                 }} 
                                 className={`me-2 ${activeSection === "home" ? "active" : ""}`}
                             >HOME</Nav.Link>
-                            <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
+                            <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} offset={-55} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
                             <Nav.Link as={ScrollLink} to="gallery-images" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>GALLERY</Nav.Link>
                             <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdown" className="me-2 rounded-0" active={activeSection === "certificates"}>
                                 <NavDropdown.Item as={Link} to={`/certificate?name=Certificate of Registration&imageLink=${certificateOfRegistrationImg}&pdfLink=${certificateOfRegistrationPdf}`} className="mb-2">Certificate of Registration</NavDropdown.Item>

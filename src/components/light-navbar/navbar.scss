@@ -1,18 +1,24 @@
 .navbar {
     height: 8vh;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color changes */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease-in-out; /* Smooth transition for background and text color changes */
 
-    /* Add !important to ensure background color and text color are applied */
+    &.bg-transparent {
+        background-color: transparent !important;
+        backdrop-filter: none;
+    }
+
+    &.blurred-bg {
+        background-color: rgba(129, 129, 129, 0.404) !important; /* Light transparent white */
+        backdrop-filter: blur(8px); /* Slight blur effect */
+    }
+
     &.bg-white {
         background-color: white !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
     }
 
     &.text-dark {
         color: black !important;
-    }
-
-    &.bg-transparent {
-        background-color: transparent !important;
     }
 
     &.text-white {

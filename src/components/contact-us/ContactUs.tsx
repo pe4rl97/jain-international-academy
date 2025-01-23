@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap"
 import './contact-us.scss'
+import { FaLocationDot } from "react-icons/fa6"
 
 const ContactUs = () => {
     return (
@@ -10,20 +11,20 @@ const ContactUs = () => {
                     <Col md='5' xs='11' data-aos='fade-right' data-aos-delay='100'>
                         <Row>
                             <Col>
-                                <div className="mb-3">
-                                    <h4>Address</h4>
-                                    <div>Near Dutt Temple, Dharampur road, Pathri, Chanvai, Valsad-396001, Gujarat</div>
+                                <div className="mb-4">
+                                    <h3>Address</h3>
+                                    <div><span className="contact-details-div ">Near Dutt Temple, Dharampur road, Pathri, Chanvai, Valsad-396001, Gujarat</span></div>
                                 </div>
-                                <div className="mb-3">
-                                    <h4>Email</h4>
+                                <div className="mb-4">
+                                    <h3>Email</h3>
                                     <div>
-                                        <a href= "mailto:jipsschoolvalsad@gmail.com">jipsschoolvalsad@gmail.com</a>
+                                        <span className="contact-details-div"><a href= "mailto:jipsschoolvalsad@gmail.com">jipsschoolvalsad@gmail.com</a></span>
                                     </div>
                                 </div>
-                                <div className="mb-3">
-                                    <h4>Phone</h4>
-                                    <div>99256 51745</div>
-                                    <div>99207 57191</div>
+                                <div className="mb-4">
+                                    <h3>Phone</h3>
+                                    <div><span className="contact-details-div">+91 99256 51745</span></div>
+                                    <div><span className="contact-details-div">+91 99207 57191</span></div>
                                 </div>
                             </Col>
                         </Row>

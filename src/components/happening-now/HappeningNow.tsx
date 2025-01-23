@@ -47,7 +47,7 @@ const HappeningNow = () => {
                 </Row>
                 <Row>
                     {cardsData.data.map((cardData) => (
-                        <Col md='3' sm='6' xs='12' key={cardData.id} className="mb-3 card-wrapper">
+                        <Col lg='3' md='6' sm='6' xs='12' key={cardData.id} className="mb-3 card-wrapper">
                             <HappeningNowCards key={cardData.id} id={cardData.id} heading={cardData.heading} image_url={cardData.image_url} text={cardData.text}/> 
                         </Col>
                     ))}

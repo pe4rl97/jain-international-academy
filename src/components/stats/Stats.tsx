@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import "./stats.scss";
+import CountUp from "react-countup";
 
 const Stats = () => {
   const { ref: statsRef, inView } = useInView({
@@ -19,15 +20,15 @@ const Stats = () => {
                     >
                         <Row className="rounded-4 p-3 py-5 justify-content-between align-items-center">
                             <Col md="3" xs="4" className="mb-4">
-                                <h1 className="title-h1">300+</h1>
+                                <h1 className="title-h1">{inView && <CountUp start={0} end={300} duration={2} />}+</h1>
                                 <div className="subtitle-div">Students</div>
                             </Col>
                             <Col md="3" xs="4" className="mb-4">
-                                <h1 className="title-h1">1 to 8</h1>
+                                <h1 className="title-h1">1 to {inView && <CountUp start={1} end={8} duration={5} />}</h1>
                                 <div className="subtitle-div">Class</div>
                             </Col>
                             <Col md="3" xs="4" className="mb-4">
-                                <h1 className="title-h1">12+</h1>
+                                <h1 className="title-h1">{inView && <CountUp start={1} end={12} duration={4} />}+</h1>
                                 <div className="subtitle-div">Teachers</div>
                             </Col>
                         </Row>

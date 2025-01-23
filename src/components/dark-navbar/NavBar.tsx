@@ -22,16 +22,32 @@ import schoolManagementCommitteePdf from '../../assets/certificates/School Manag
 import schoolManagementCommitteeImg from '../../assets/certificates/School Management Committee.jpg'
 import { Link } from "react-router-dom"
 import logo from '../../assets/logo.jpg'
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 const NavBar = () => {
     const [showOffcanvas, setShowOffcanvas] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    const handleScroll = useCallback(() => {
+        if (window.scrollY > window.innerHeight * 0.35) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [handleScroll]);
 
     const handleCloseOffcanvas = () => setShowOffcanvas(false);
     const handleShowOffcanvas = () => setShowOffcanvas(true);
     return (
-        // <Container className="pt-3">
-            <Navbar fixed='top' expand='md' className="rounded bg-white shadow">
+        <>
+            <Navbar fixed="top" expand='lg' className={`bg-white ${scrolled ? '' : 'navbar-shadow-0'} `}>
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <span><img src={logo} height={40} className="me-3"/></span>
@@ -73,6 +89,18 @@ const NavBar = () => {
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
+            <div className="py-5 page-header position-relative mb-5 bg-transparent header" >
+                <div className="container py-5 ms-5">
+                    <h1 className="display-2 text-white mb-4 header-title" data-aos='fade-down'>Certificate</h1>
+                    <nav aria-label="breadcrumb animated slideInDown">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/" style={{textDecoration:'none'}}>Home</Link></li>           
+                            <li className="breadcrumb-item text-white active" aria-current="page">Certificate</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </>
         // </Container>
     )
 }
