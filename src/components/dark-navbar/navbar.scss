@@ -3,7 +3,7 @@
     .nav-link.dark{
         font-weight: bold;
         color: var(--dark-slate-grey);
-        font-family: 'DM Sans';
+        font-family: 'Poppins', sans-serif !important;
     }
     .nav-link.dark.show, .nav-link.dark:hover, .nav-link.dark.active {
         color: black !important;

@@ -18,15 +18,15 @@ const Stats = () => {
                         className={`text-center stats-wrapper ${inView ? "in-view" : ""}`}
                     >
                         <Row className="rounded-4 p-3 py-5 justify-content-between align-items-center">
-                            <Col md="3" xs="12" className="mb-4">
+                            <Col md="3" xs="4" className="mb-4">
                                 <h1 className="title-h1">300+</h1>
                                 <div className="subtitle-div">Students</div>
                             </Col>
-                            <Col md="3" xs="12" className="mb-4">
+                            <Col md="3" xs="4" className="mb-4">
                                 <h1 className="title-h1">1 to 8</h1>
                                 <div className="subtitle-div">Class</div>
                             </Col>
-                            <Col md="3" xs="12" className="mb-4">
+                            <Col md="3" xs="4" className="mb-4">
                                 <h1 className="title-h1">12+</h1>
                                 <div className="subtitle-div">Teachers</div>
                             </Col>

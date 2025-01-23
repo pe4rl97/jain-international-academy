@@ -12,6 +12,8 @@ const Certificate: React.FC = () => {
   const [isMandatoryDisclosure, setIsMandatoryDisclosure] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     // Extract query parameters from the URL
     const params = new URLSearchParams(location.search);
     const name = params.get("name") || "";
@@ -44,7 +46,7 @@ const Certificate: React.FC = () => {
               <a href={pdfLink} target="_blank" rel="noopener noreferrer">
                 <Image src={imageLink} alt={pdfName} fluid className={`shadow certificate-img ${isMandatoryDisclosure ? "mb-4" : ""}`}/>
               </a>
-              <p className="text-muted">*Click the image to open/download the PDF file.</p>
+              <p className="text-muted mt-3">*Click the image to open/download the PDF file.</p>
             </Col>
           </Row>
         </Container>

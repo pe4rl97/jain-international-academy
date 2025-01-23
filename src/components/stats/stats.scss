@@ -15,7 +15,7 @@
     .stats-wrapper {
         margin-top: -102px;
         color: white;
-        font-size: 18px;
+        font-size: 14px;
         line-height: 20px;
         letter-spacing: -0.1px;
         font-family: "DM Sans", sans-serif;
@@ -23,8 +23,15 @@
         .row {
             background-color: #a4703b;
             .title-h1 {
-                font-size: 4rem;
+                font-size: 2.5rem;
             }
+
+            @media (min-width:768px) {
+                .title-h1 {
+                    font-size: 4rem;
+                }
+            }
+
             .subtitle-div {
                 text-transform: uppercase;
                 color: #f0e3d0;
@@ -46,6 +53,12 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .stats-wrapper {
+            font-size: 18px;
         }
     }
 }

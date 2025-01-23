@@ -23,10 +23,12 @@ import schoolManagementCommitteeImg from '../../assets/certificates/School Manag
 import { Link as ScrollLink } from "react-scroll"
 import { Link } from "react-router-dom"
 import { useCallback, useEffect, useState } from "react"
+import logo from '../../assets/logo-transparentbg.png'
 
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
+    const [showOffcanvas, setShowOffcanvas] = useState(false);
 
     const handleScroll = useCallback(() => {
         if (window.scrollY > window.innerHeight * 0.9) {
@@ -47,6 +49,9 @@ const NavBar = () => {
         setActiveSection(currentSection);
     }, [activeSection]);
 
+    const handleCloseOffcanvas = () => setShowOffcanvas(false);
+    const handleShowOffcanvas = () => setShowOffcanvas(true);
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -63,14 +68,20 @@ const NavBar = () => {
             >
                 <Container>
                     <Navbar.Brand as={Link} to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                        <span><img src={logo} height={40} className="me-3"/></span>
                         <span className={`fw-bold h5 ${scrolled ? 'd-none': 'text-white'}`}>JIPS</span>
-                        <span className={`fw-bold h5 ${scrolled ? 'text-black': 'd-none'}`}>Jain International Public School</span>
+                        <span className={`fw-bold h5 ${scrolled ? 'text-black': 'd-none'}`}>
+                            <span className="d-md-inline d-none">Jain International Public School</span>
+                            <span className="d-inline d-md-none">JIPS</span>
+                        </span>
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" />
+                    <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShowOffcanvas}/>
                     <Navbar.Offcanvas
                         id="offcanvasNavbar"
                         aria-labelledby="offcanvasNavbarLabel"
                         placement="end"
+                        show={showOffcanvas}
+                        onHide={handleCloseOffcanvas}
                     >
                     <Offcanvas.Header closeButton>
                         {/* <Offcanvas.Title id="offcanvasNavbarLabel">
@@ -79,9 +90,16 @@ const NavBar = () => {
                     </Offcanvas.Header>
                         <Offcanvas.Body className="ms-4">
                         <Nav className="justify-content-end flex-grow-1 pe-3">
-                            <Nav.Link as={ScrollLink} to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={`me-2 ${activeSection === "home" ? "active" : ""}`}>HOME</Nav.Link>
-                            <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
-                            <Nav.Link as={ScrollLink} to="gallery-images" smooth={true} duration={500} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>GALLERY</Nav.Link>
+                            <Nav.Link 
+                                as={ScrollLink} to="/" 
+                                onClick={() => {
+                                    window.scrollTo({ top: 0, behavior: "smooth" });
+                                    handleCloseOffcanvas();
+                                }} 
+                                className={`me-2 ${activeSection === "home" ? "active" : ""}`}
+                            >HOME</Nav.Link>
+                            <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
+                            <Nav.Link as={ScrollLink} to="gallery-images" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>GALLERY</Nav.Link>
                             <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdown" className="me-2 rounded-0" active={activeSection === "certificates"}>
                                 <NavDropdown.Item as={Link} to={`/certificate?name=Certificate of Registration&imageLink=${certificateOfRegistrationImg}&pdfLink=${certificateOfRegistrationPdf}`} className="mb-2">Certificate of Registration</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to={`/certificate?name=Building Safety Certificate&imageLink=${buildingSafetyCertificateImg}&pdfLink=${buildingSafetyCertificatePdf}`} className="mb-2">Building Safety Certificate</NavDropdown.Item>
@@ -94,7 +112,7 @@ const NavBar = () => {
                                 <NavDropdown.Item as={Link} to={`/certificate?name=Self Declaration&imageLink=${selfDeclarationImg}&pdfLink=${selfDeclarationPdf}`} className="mb-2">Self Declaration</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to={`/certificate?name=School Management Committee&imageLink=${schoolManagementCommitteeImg}&pdfLink=${schoolManagementCommitteePdf}`} className="mb-2">School Management Committee</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link as={ScrollLink} to="contact-us" smooth={true} duration={500} className={`me-2 ${activeSection === "contact-us" ? "active" : ""}`}>CONTACT US</Nav.Link>                            </Nav>
+                            <Nav.Link as={ScrollLink} to="contact-us" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "contact-us" ? "active" : ""}`}>CONTACT US</Nav.Link>                            </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>
