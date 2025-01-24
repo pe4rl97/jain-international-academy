@@ -5,8 +5,10 @@ import { Container } from "react-bootstrap";
 
 import J1 from "../../assets/about-us/J1.jpeg";
 // import J1 from "../../assets/about-us/J1.jpg";
-import J2 from "../../assets/about-us/J2.jpg";
-import J3 from "../../assets/about-us/J3.jpg";
+// import J2 from "../../assets/about-us/J2.jpg";
+// import J3 from "../../assets/about-us/J3.jpg";
+import J6 from "../../assets/about-us/J6.jpg";
+import J7 from "../../assets/about-us/J7.jpg";
 import callToActionPhoto from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 2.49.09 PM (2).jpeg';
 import HappeningNow from "../happening-now/HappeningNow";
 import "./about-us.scss";
@@ -61,7 +63,7 @@ const AboutUs = () => {
                     >
                       <img
                         className="img-fluid w-100 rounded-circle bg-light p-3 img-hover"
-                        src={J3}
+                        src={J6}
                         alt=""
                       />
                     </div>
@@ -71,7 +73,7 @@ const AboutUs = () => {
                     >
                       <img
                         className="img-fluid w-100 rounded-circle bg-light p-3 img-hover"
-                        src={J2}
+                        src={J7}
                         alt=""
                       />
                     </div>

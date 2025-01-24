@@ -45,7 +45,7 @@ const HappeningNow = () => {
                         </p>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="justify-content-center mt-3">
                     {cardsData.data.map((cardData) => (
                         <Col lg='3' md='6' sm='6' xs='12' key={cardData.id} className="mb-3 card-wrapper">
                             <HappeningNowCards key={cardData.id} id={cardData.id} heading={cardData.heading} image_url={cardData.image_url} text={cardData.text}/> 

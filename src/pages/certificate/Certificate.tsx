@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import NavBar from "../../components/dark-navbar/NavBar";
-import './certificate.scss'
+import './certificate.scss';
 
 const Certificate: React.FC = () => {
   const location = useLocation();

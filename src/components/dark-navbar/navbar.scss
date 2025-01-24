@@ -1,5 +1,5 @@
 .navbar{
-    height: 8vh;
+    height: 3.3rem;
     .nav-link.dark{
         font-weight: bold;
         color: var(--dark-slate-grey);
@@ -43,31 +43,27 @@
 }
 
 .header {
-    margin-top: 4.67rem;
+    margin-top: 3.27rem;
 }
 
 @media (min-width: 768px) {
     .header {
-        margin-top: 5.2rem;
+        margin-top: 3.2rem;
     }
 }
+@media (min-width: 768px) {
+    .header {
+        margin-top: 3.2rem;
+    }
+}
+
 @media (min-width: 992px) {
     .header {
-        margin-top: 4.3rem;
+        margin-top: 3.3rem;
     }
 }
 
-@media (min-width: 1200px) {
-    .header {
-        margin-top: 4.4rem;
-    }
-}
 
-@media (min-width: 1400px) {
-    .header {
-        margin-top: 3.7rem;
-    }
-}
 
 
 .page-header::before, .page-header::after {
@@ -82,7 +78,7 @@
 }
 
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('../../assets/header/bg-header.jpeg') center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('../../assets/header/header-bg.png') center center no-repeat;
     background-size: cover;
 }
 

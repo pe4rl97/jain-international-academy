@@ -1,6 +1,8 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import './main-header.scss'
 import { Link } from 'react-scroll'
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 const MainHeader = () => {
     return (
@@ -8,24 +10,54 @@ const MainHeader = () => {
             <Row className='h-100 justify-content-center align-items-center'>
                 <Col xs='12'>
                     <Row>
-                        <Col xs='11'>
-                            <h1 className='text-center jumbo-header'>JAIN&nbsp;&nbsp;INTERNATIONAL</h1>
+                        <Col xs='12'>
+                            <motion.h1 
+                                initial={{ opacity: 0, y: -50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1 }}
+                                className='text-center'
+                            >
+                                <TypeAnimation
+                                    sequence={[
+                                        'Jain International', 1000
+                                    ]}
+                                    speed={50}
+                                    repeat={0}
+                                    className='jumbo-header'
+                                    cursor={false}
+                                />
+                            </motion.h1>
                         </Col>
-
-                    </Row>
-                    <Row className='justify-content-end'>
-                        <Col xs='9'>
-                            <h1 className='text-end jumbo-header'>PUBLIC&nbsp;&nbsp;SCHOOL</h1>
+                        <Col xs='12'>
+                            <motion.h1 
+                                initial={{ opacity: 0, y: -50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1 }}
+                                className='text-center'
+                            >
+                                <TypeAnimation
+                                    sequence={[
+                                        '', 1000,
+                                        'Public School', 1000
+                                    ]}
+                                    speed={50}
+                                    repeat={0}
+                                    className='jumbo-header'
+                                    cursor={false}
+                                />
+                            </motion.h1>
                         </Col>
                     </Row>
                     <Row className='justify-content-center mt-3'>
-                        <Col md='6' xs='10'>
-                            <p className='paragraph-hero-subtext'>Jain International Public School, Valsad – Inspiring young minds since 2013 with exceptional education in a vibrant, modern, and inclusive environment.</p>
-                            <Row className='justify-content-end mt-3'>
-                                <Col md='6' xs='10' className='btn-col'>
-                                    <Link to='contact-us' smooth={true} duration={500}><button className='get-in-touch-button'>Get In Touch</button></Link>
-                                </Col>
-                            </Row>
+                        <Col md='5' xs='9'>
+                            <p className='paragraph-hero-subtext text-center'>Jain International Public School, Valsad – Inspiring young minds since 2013 with exceptional education in a vibrant, modern, and inclusive environment.</p>
+                        </Col>
+                    </Row>
+                    <Row className='justify-content-center'>
+                        <Col md='12' xs='12' className='btn-col text-center'>
+                            <Link to='contact-us' smooth={true} duration={500}><button className='get-in-touch-button'>Get In Touch</button></Link>
                         </Col>
                     </Row>
                     
