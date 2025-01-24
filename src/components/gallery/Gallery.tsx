@@ -16,7 +16,6 @@ const Gallery = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
     }, []);
-    console.log(video);
     return (
         <section id='gallery-images' className='main-content'>
             <Container>
@@ -29,7 +28,6 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
-                                        {/* <span className='meta'><IoSearch /> </span> */}
                                     </div>
                                     
                                 </div>
@@ -41,7 +39,6 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
-                                        {/* <span className='meta'><IoSearch /> </span> */}
                                     </div>
                                     
                                 </div>
@@ -53,7 +50,6 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
-                                        {/* <span className='meta'><IoSearch /> </span> */}
                                     </div>
                                     
                                 </div>
@@ -65,7 +61,6 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
-                                        {/* <span className='meta'><IoSearch /> </span> */}
                                     </div>
                                     
                                 </div>
@@ -77,7 +72,6 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
-                                        {/* <span className='meta'><IoSearch /> </span> */}
                                     </div>
                                     
                                 </div>
@@ -89,7 +83,6 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
-                                        {/* <span className='meta'><IoSearch /> </span> */}
                                     </div>
                                     
                                 </div>
@@ -101,7 +94,6 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
-                                        {/* <span className='meta'><IoSearch /> </span> */}
                                     </div>
                                     
                                 </div>
