@@ -9,13 +9,14 @@ import photo4 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 2.4
 import photo5 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 2.49.09 PM.jpeg'
 import photo6 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 2.49.10 PM.jpeg'
 import photo7 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 3.09.34 PM.jpeg'
+import video from '../../assets/JIPS.mp4'
 import './gallery.scss'
 
 const Gallery = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
     }, []);
-    
+    console.log(video);
     return (
         <section id='gallery-images' className='main-content'>
             <Container>
@@ -114,7 +115,7 @@ const Gallery = () => {
                     <Row className="justify-content-center">
                         <Col md={8}>
                         <video controls className="w-100 bg-white p-4">
-                            <source src="https://jaininternationalacademy.com/assets/JIPS.mp4" type="video/mp4" />
+                            <source src={video} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         </Col>

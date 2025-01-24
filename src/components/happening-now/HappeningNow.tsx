@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap"
-import './happening-now.scss'
-import HappeningNowCards from "../happening-now-cards/HappeningNowCards"
 import { useInView } from "react-intersection-observer"
+import HappeningNowCards from "../happening-now-cards/HappeningNowCards"
+import './happening-now.scss'
 
 const cardsData = {
     data: [{
@@ -48,7 +48,7 @@ const HappeningNow = () => {
                 <Row className="justify-content-center mt-3">
                     {cardsData.data.map((cardData) => (
                         <Col lg='3' md='6' sm='6' xs='12' key={cardData.id} className="mb-3 card-wrapper">
-                            <HappeningNowCards key={cardData.id} id={cardData.id} heading={cardData.heading} image_url={cardData.image_url} text={cardData.text}/> 
+                            <HappeningNowCards key={cardData.id} heading={cardData.heading} image_url={cardData.image_url} text={cardData.text}/> 
                         </Col>
                     ))}
                 </Row>

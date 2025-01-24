@@ -1,7 +1,9 @@
 .navbar {
-    height: 8vh;
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease-in-out; /* Smooth transition for background and text color changes */
 
+    .poppins-font {
+        font-family: 'Poppins', sans-serif !important;
+    }
     .full-header-title {
         font-family: 'Lobster Two', cursive;
     }
@@ -51,5 +53,21 @@
 
     &.text-white .nav-link {
         color: white !important; /* Make sure text is white when at the top */
+    }
+}
+
+.custom-navbar {
+    height: 3.8rem !important;
+}
+
+
+@media (max-width: 768px) {
+    .custom-navbar {
+        height: 4.2rem !important;
+    }
+}
+@media (max-width: 992px) {
+    .custom-navbar {
+        height: 4.2rem !important;
     }
 }

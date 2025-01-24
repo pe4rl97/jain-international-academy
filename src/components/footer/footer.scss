@@ -2,23 +2,6 @@
     background-color: var(--dark-slate-grey);
     text-align: center;
     padding-top: 0;
-    // padding-bottom: 10px;
-
-    .ctu-container {
-        background-color: var(--very-light-blue);
-        margin-bottom: 40px;
-        .ctu-container-text {
-            font-size: 35px;
-            font-family: "Playfair Display", sans-serif;
-            letter-spacing: -.1px;
-        }
-
-        @media (min-width: 768px) {
-            .ctu-container-text {
-                font-size: 50px;
-            }
-        }
-    }
     .footer-container {
         padding-top: 3rem;
         .footer-logo-heading {
@@ -107,45 +90,41 @@
     cursor: pointer;
     transition-duration: 0.3s;
     overflow: hidden;
-  }
-  
-  .svgIcon {
-    width: 12px;
-    transition-duration: 0.3s;
-  }
-  
-  .svgIcon path {
-    fill: white;
-  }
-  
-  .scroll-to-top-btn:hover {
-    width: 140px;
-    border-radius: 50px;
-    transition-duration: 0.3s;
-    background-color: var(--bs-primary);
-    align-items: center;
-  }
-  
-  .scroll-to-top-btn:hover .svgIcon {
-    /* width: 20px; */
-    transition-duration: 0.3s;
-    transform: translateY(-210%);
-  }
-  
-  .scroll-to-top-btn::before {
-    position: absolute;
-    bottom: -20px;
-    content: "Back to Top";
-    color: white;
-    /* transition-duration: .3s; */
-    font-size: 0px;
-  }
-  
-  .scroll-to-top-btn:hover::before {
-    font-size: 13px;
-    opacity: 1;
-    bottom: unset;
-    /* transform: translateY(-30px); */
-    transition-duration: 0.3s;
-  }
-  
+
+    &:hover {
+        width: 140px;
+        border-radius: 50px;
+        transition-duration: 0.3s;
+        background-color: var(--bs-primary);
+        align-items: center;
+    }
+
+    &:hover .svgIcon {
+        transition-duration: 0.3s;
+        transform: translateY(-210%);
+    }
+
+    &::before {
+        position: absolute;
+        bottom: -20px;
+        content: "Back to Top";
+        color: white;
+        font-size: 0px;
+    }
+
+    &:hover::before {
+        font-size: 13px;
+        opacity: 1;
+        bottom: unset;
+        transition-duration: 0.3s;
+    }
+
+    .svgIcon {
+        width: 12px;
+        transition-duration: 0.3s;
+    }
+      
+    .svgIcon path {
+        fill: white;
+    }
+}

@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
 import './contact-us.scss'
-import { FaLocationDot } from "react-icons/fa6"
 
 const ContactUs = () => {
     return (

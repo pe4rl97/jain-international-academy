@@ -51,7 +51,7 @@ const NavBar = () => {
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <span><img src={logo} height={40} className="me-3"/></span>
-                        <span className="fw-bold h5">JIPS</span>
+                        <span className="fw-bold h5 poppins-font">JIPS</span>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShowOffcanvas}/>
                     <Navbar.Offcanvas
@@ -62,9 +62,6 @@ const NavBar = () => {
                         onHide={handleCloseOffcanvas}
                     >
                     <Offcanvas.Header closeButton>
-                        {/* <Offcanvas.Title id="offcanvasNavbarLabel">
-                            Offcanvas
-                        </Offcanvas.Title> */}
                     </Offcanvas.Header>
                         <Offcanvas.Body className="ms-4">
                         <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -101,7 +98,6 @@ const NavBar = () => {
                 </div>
             </div>
         </>
-        // </Container>
     )
 }
 

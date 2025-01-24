@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import './certificate.scss';
 
-const Certificate: React.FC = () => {
+const Certificate = () => {
   const location = useLocation();
   const [pdfName, setPdfName] = useState("");
   const [imageLink, setImageLink] = useState("");
