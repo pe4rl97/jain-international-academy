@@ -2,6 +2,10 @@
     height: 8vh;
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease-in-out; /* Smooth transition for background and text color changes */
 
+    .full-header-title {
+        font-family: 'Lobster Two', cursive;
+    }
+
     &.bg-transparent {
         background-color: transparent !important;
         backdrop-filter: none;

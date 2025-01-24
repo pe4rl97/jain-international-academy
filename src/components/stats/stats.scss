@@ -10,7 +10,7 @@
 }
 
 .stats-wrapper-container {
-    background-color: var(--very-light-brown);
+    background-color: var(--very-light-blue);
     padding-bottom: 92px;
     .stats-wrapper {
         margin-top: -102px;
@@ -21,7 +21,7 @@
         font-family: "DM Sans", sans-serif;
     
         .row {
-            background-color: #a4703b;
+            background-color: var(--dark-slate-grey);
             .title-h1 {
                 font-size: 2.5rem;
             }
@@ -34,7 +34,7 @@
 
             .subtitle-div {
                 text-transform: uppercase;
-                color: #f0e3d0;
+                color: var(--light-slate-grey);
             }
     
             .title-h1,

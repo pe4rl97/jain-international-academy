@@ -88,7 +88,7 @@ const NavBar = () => {
                         <span><img src={logo} height={40} className="me-3"/></span>
                         <span className={`fw-bold h5 ${scrolledTransparent ? 'd-none': 'text-white'}`}>JIPS</span>
                         <span className={`fw-bold h5 ${scrolledTransparent ? 'text-black': 'd-none'}`}>
-                            <span className="d-md-inline d-none">Jain International Public School</span>
+                            <span className="d-md-inline d-none full-header-title">Jain International Public School</span>
                             <span className="d-inline d-md-none">JIPS</span>
                         </span>
                     </Navbar.Brand>

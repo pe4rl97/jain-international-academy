@@ -10,10 +10,10 @@ import NavBar from './components/dark-navbar/NavBar'
 function App() {
     useEffect(() => {
         AOS.init({
-            duration: 600, // Animation duration (in ms)
+            duration: 500, // Animation duration (in ms)
             easing: 'ease-in', // Animation easing
             once: false,
-            mirror: true, // Whether elements should animate out while scrolling past them
+            mirror: false, // Whether elements should animate out while scrolling past them
         });
     }, []);
     return (
