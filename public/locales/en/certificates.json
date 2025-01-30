@@ -1,0 +1,14 @@
+{
+    "certificateNames": {
+        "certificateOfRegistration": "Certificate of Registration",
+        "buildingSafetyCertificate": "Building Safety Certificate",
+        "landCertificate": "Land Certificate",
+        "mandatoryDisclosureDetails": "Mandatory Disclosure Details",
+        "noObjectionCertificate": "No Objection Certificate",
+        "recognitionCertificate": "Recognition Certificate",
+        "waterAndSanitationCertificate": "Water and Sanitation Certificates",
+        "waterSampleTest": "Water Sample Test",
+        "selfDeclaration": "Self Declaration",
+        "schoolManagementCommittee": "School Management Committee"
+    }
+}

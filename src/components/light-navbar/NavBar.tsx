@@ -24,12 +24,15 @@ import { Link as ScrollLink } from "react-scroll"
 import { Link } from "react-router-dom"
 import { useCallback, useEffect, useState } from "react"
 import logo from '../../assets/logo-transparentbg.png'
+import { useTranslation } from "react-i18next"
 
 const NavBar = () => {
     const [scrolledTransparent, setScrolledTransparent] = useState(false);
     const [scrolledTransparentHalf, setScrolledTransparentHalf] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
     const [showOffcanvas, setShowOffcanvas] = useState(false);
+    const { t, i18n } = useTranslation(["navbar", "certificates"]);
+    const certificateNames = t("certificateNames", { ns: "certificates"});
 
     const handleScroll = useCallback(() => {
         const scrollY = window.scrollY;
@@ -69,6 +72,8 @@ const NavBar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [handleScroll]);
+
+    const languages = ['en', 'hi', 'gu'];
 
     return (
         <Navbar
@@ -110,22 +115,41 @@ const NavBar = () => {
                                 handleCloseOffcanvas();
                             }} 
                             className={`me-2 ${activeSection === "home" ? "active" : ""}`}
-                        >HOME</Nav.Link>
-                        <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} offset={-55} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
-                        <Nav.Link as={ScrollLink} to="gallery-images" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>GALLERY</Nav.Link>
-                        <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdown" className="me-2 rounded-0" active={activeSection === "certificates"}>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Certificate of Registration&imageLink=${certificateOfRegistrationImg}&pdfLink=${certificateOfRegistrationPdf}`} className="mb-2">Certificate of Registration</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Building Safety Certificate&imageLink=${buildingSafetyCertificateImg}&pdfLink=${buildingSafetyCertificatePdf}`} className="mb-2">Building Safety Certificate</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Land Certificate&imageLink=${landCertificateImg}&pdfLink=${landCertificatePdf}`} className="mb-2">Land Certificate</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Mandatory Disclosure Details&imageLink=${mandatoryDisclosureImg}&pdfLink=${mandatoryDisclosurePdf}`} className="mb-2">Mandatory Disclosure Details</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=No Objection Certificate&imageLink=${noObjectionCertificateImg}&pdfLink=${noObjectionCertificatePdf}`} className="mb-2">No Objection Certificate</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Recognition Certificate&imageLink=${recognitionCertificateImg}&pdfLink=${recognitionCertificatePdf}`} className="mb-2">Recognition Certificate</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Water and Sanitation Certificates&imageLink=${waterAndSanitationCertificateImg}&pdfLink=${waterAndSanitationCertificatePdf}`} className="mb-2">Water and Sanitation Certificates</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Water Sample Test&imageLink=${waterSampleTestImg}&pdfLink=${waterSampleTestPdf}`} className="mb-2">Water Sample Test</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=Self Declaration&imageLink=${selfDeclarationImg}&pdfLink=${selfDeclarationPdf}`} className="mb-2">Self Declaration</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to={`/certificate?name=School Management Committee&imageLink=${schoolManagementCommitteeImg}&pdfLink=${schoolManagementCommitteePdf}`} className="mb-2">School Management Committee</NavDropdown.Item>
+                        >{t("home", { ns: "navbar" })}</Nav.Link>
+                        <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} offset={-55} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>{t("aboutUs", { ns: "navbar" })}</Nav.Link>
+                        <Nav.Link as={ScrollLink} to="gallery-images" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>{t("gallery", { ns: "navbar" })}</Nav.Link>
+                        <NavDropdown title={t("certificates", { ns: "navbar" })} id="offcanvasNavbarDropdown" className="me-2 rounded-0" active={activeSection === "certificates"}>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.certificateOfRegistration}&imageLink=${certificateOfRegistrationImg}&pdfLink=${certificateOfRegistrationPdf}`} className="mb-2">{certificateNames.certificateOfRegistration}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.buildingSafetyCertificate}&imageLink=${buildingSafetyCertificateImg}&pdfLink=${buildingSafetyCertificatePdf}`} className="mb-2">{certificateNames.buildingSafetyCertificate}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.landCertificate}&imageLink=${landCertificateImg}&pdfLink=${landCertificatePdf}`} className="mb-2">{certificateNames.landCertificate}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.mandatoryDisclosureDetails}&imageLink=${mandatoryDisclosureImg}&pdfLink=${mandatoryDisclosurePdf}`} className="mb-2">{certificateNames.mandatoryDisclosureDetails}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.noObjectionCertificate}&imageLink=${noObjectionCertificateImg}&pdfLink=${noObjectionCertificatePdf}`} className="mb-2">{certificateNames.noObjectionCertificate}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.recognitionCertificate}&imageLink=${recognitionCertificateImg}&pdfLink=${recognitionCertificatePdf}`} className="mb-2">{certificateNames.recognitionCertificate}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.waterAndSanitationCertificate}&imageLink=${waterAndSanitationCertificateImg}&pdfLink=${waterAndSanitationCertificatePdf}`} className="mb-2">{certificateNames.waterAndSanitationCertificate}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.waterSampleTest}&imageLink=${waterSampleTestImg}&pdfLink=${waterSampleTestPdf}`} className="mb-2">{certificateNames.waterSampleTest}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.selfDeclaration}&imageLink=${selfDeclarationImg}&pdfLink=${selfDeclarationPdf}`} className="mb-2">{certificateNames.selfDeclaration}</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={`/certificate?name=${certificateNames.schoolManagementCommittee}&imageLink=${schoolManagementCommitteeImg}&pdfLink=${schoolManagementCommitteePdf}`} className="mb-2">{certificateNames.schoolManagementCommittee}</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={ScrollLink} to="contact-us" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "contact-us" ? "active" : ""}`}>CONTACT US</Nav.Link>                            </Nav>
+                        <Nav.Link as={ScrollLink} to="contact-us" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "contact-us" ? "active" : ""}`}>{t("contactUs", { ns: "navbar" })}</Nav.Link>
+                        <NavDropdown 
+                            title={t(`languages.${i18n.language}`, { ns: "navbar" })} 
+                            id="language-dropdown"
+                            className="me-2"
+                        >
+                            {languages.map((lang) => (
+                                <NavDropdown.Item 
+                                    key={lang}
+                                    onClick={() => {
+                                        i18n.changeLanguage(lang);
+                                        handleCloseOffcanvas();
+                                    }}
+                                    disabled={i18n.language === lang}
+                                >
+                                    {t(`languages.${lang}`, { ns: "navbar" })}
+                                </NavDropdown.Item>
+                            ))}
+                        </NavDropdown>
+                    </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
             </Container>

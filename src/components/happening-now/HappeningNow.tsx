@@ -2,46 +2,49 @@ import { Col, Container, Row } from "react-bootstrap"
 import { useInView } from "react-intersection-observer"
 import HappeningNowCards from "../happening-now-cards/HappeningNowCards"
 import './happening-now.scss'
+import { useTranslation } from "react-i18next"
 
-const cardsData = {
-    data: [{
-        id: 1,
-        heading: 'Group Activities in School',
-        image_url: '/src/assets/indian-teacher-uses-laptop.png',
-        text: "Group activities in school foster teamwork, creativity, learning, and friendships.",
-    }, {
-        id: 2,
-        heading: 'Individual Education Plan',
-        image_url: '/src/assets/individual-education-plan.jpg',
-        text: "Individual Education Plan supports personalized learning for students.",
-    }, {
-        id: 3,
-        heading: 'Experienced Coaches',
-        image_url: '/src/assets/karate-students.jpg',
-        text: "Experienced coaches for Sports, Karate, Music and Co-curricular Activities",
-    }, {
-        id: 4,
-        heading: 'Interactive Classroom',
-        image_url: '/src/assets/teacher-with-children-interaction.png',
-        text: "Guidance through interactive role play and meaningful conversation between teacher and students.",
-    }]
-}
 
 const HappeningNow = () => {
     const { ref: Ref, inView } = useInView({
         threshold: 0.1, // Trigger when 10% of the element is visible
         triggerOnce: true, // Trigger only once when it comes into view
     });
+    const { t } = useTranslation("about-us");
+    const { card1, card2, card3, card4 } = t("cards");
+    const cardsData = {
+        data: [{
+            id: 1,
+            heading: card1.heading,
+            image_url: '/src/assets/indian-teacher-uses-laptop.png',
+            text: card1.text,
+        }, {
+            id: 2,
+            heading: card2.heading,
+            image_url: '/src/assets/individual-education-plan.jpg',
+            text: card2.text,
+        }, {
+            id: 3,
+            heading: card3.heading,
+            image_url: '/src/assets/karate-students.jpg',
+            text: card3.text,
+        }, {
+            id: 4,
+            heading: card4.heading,
+            image_url: '/src/assets/teacher-with-children-interaction.png',
+            text: card4.text,
+        }]
+    }
     return (
         <div className="happening-now-wrapper-div">
             <Container ref={Ref} className={`happening-now-wrapper ${inView ? "in-view" : ""}`}>
                 <Row className="justify-content-around">
                     <Col md='6' xs='10'>
-                        <h1 className="happening-now-title">Happening Now</h1>
+                        <h1 className="happening-now-title">{t("happeningNowTitle")}</h1>
                     </Col>
                     <Col md='6' xs='10'>
                         <p className="happening-p">
-                            At Jain International Public School’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.
+                            {t("happeningNowDescription")}
                         </p>
                     </Col>
                 </Row>

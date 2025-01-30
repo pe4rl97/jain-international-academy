@@ -1,27 +1,29 @@
 import { Col, Container, Row } from "react-bootstrap"
 import './contact-us.scss'
+import { useTranslation } from "react-i18next"
 
 const ContactUs = () => {
+    const { t } = useTranslation("contact-us");
     return (
         <section id="contact-us" className="contact-us-wrapper">
             <Container className="contact-us-container">
-                <h1 className="contact-us-heading" data-aos='fade-in'><span className="bg-white">Get In Touch</span></h1>
+                <h1 className="contact-us-heading" data-aos='fade-in'><span className="bg-white">{t("getInTouchTitle")}</span></h1>
                 <Row className='justify-content-between mt-5 align-items-center'>
                     <Col md='5' xs='11' data-aos='fade-right' data-aos-delay='100'>
                         <Row>
                             <Col>
                                 <div className="mb-4">
-                                    <h3>Address</h3>
-                                    <div><span className="contact-details-div ">Near Dutt Temple, Dharampur road, Pathri, Chanvai, Valsad-396001, Gujarat</span></div>
+                                    <h3>{t("addressTitle")}</h3>
+                                    <div><span className="contact-details-div ">{t("address")}</span></div>
                                 </div>
                                 <div className="mb-4">
-                                    <h3>Email</h3>
+                                    <h3>{t("emailTitle")}</h3>
                                     <div>
                                         <span className="contact-details-div"><a href= "mailto:jipsschoolvalsad@gmail.com">jipsschoolvalsad@gmail.com</a></span>
                                     </div>
                                 </div>
                                 <div className="mb-4">
-                                    <h3>Phone</h3>
+                                    <h3>{t("phoneTitle")}</h3>
                                     <div><span className="contact-details-div">+91 99256 51745</span></div>
                                     <div><span className="contact-details-div">+91 99207 57191</span></div>
                                 </div>

@@ -1,14 +1,16 @@
+import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
-import logo from '../../assets/logo-transparentbg.png';
-import './footer.scss';
-import { Link } from 'react-scroll'
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdEmail, MdPhone } from 'react-icons/md';
-import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
+import logo from '../../assets/logo-transparentbg.png';
+import './footer.scss';
 
 const Footer = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
+    const { t } = useTranslation(["common", "footer", "contact-us"]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -94,13 +96,13 @@ const Footer = () => {
 
                         </Col>
                         <Col lg='3' md='4' xs='11' className='text-start mb-4 contact-details-col'>
-                            <h2 className='heading-school'>Contact Details</h2>
+                            <h2 className='heading-school'>{t("contactDetailsTitle", { ns: "footer" })}</h2>
                             <Row className='align-items-center'>
                                 <Col xs='1' className='me-2 mb-3'>
                                     <FaLocationDot className='text-footer contact-details-icon'/>
                                 </Col>
                                 <Col>
-                                    <div className='text-footer mb-2' style={{lineHeight:'1.6'}}>Near Dutt Temple, Dharampur road, Pathri, Chanvai, Valsad-396001, Gujarat</div>
+                                    <div className='text-footer mb-2' style={{lineHeight:'1.6'}}>{t("address", { ns: "contact-us"})}</div>
                                 </Col>
                             </Row>
                             <Row>
@@ -129,21 +131,21 @@ const Footer = () => {
                             </div>
                         </Col>
                         <Col md='3' xs='11' className='text-start mb-4'>
-                            <h2 className='heading-school'>Our School</h2>
+                            <h2 className='heading-school'>{t("ourSchoolTitle", { ns: "footer"})}</h2>
                             <div>
-                                <Link to='/' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='text-footer menu-links'>{'>'} Home</Link>
+                                <Link to='/' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='text-footer menu-links'>{'>'} {t("homeTitle")}</Link>
                             </div>
                             <div>
-                                <Link to='about-us' smooth={true} duration={500} className='text-footer menu-links'>{'>'} About us</Link>
+                                <Link to='about-us' smooth={true} duration={500} className='text-footer menu-links'>{'>'} {t("aboutUsTitle")}</Link>
                             </div>
                             <div>
-                                <Link to='certificates' smooth={true} duration={500} offset={-40} className='text-footer menu-links'> {'>'} Certificates</Link>
+                                <Link to='certificates' smooth={true} duration={500} offset={-40} className='text-footer menu-links'> {'>'} {t("certificatesTitle")}</Link>
                             </div>
                             <div>
-                                <Link to='gallery-images' smooth={true} duration={500} className='text-footer menu-links'> {'>'} Gallery</Link>
+                                <Link to='gallery-images' smooth={true} duration={500} className='text-footer menu-links'> {'>'} {t("galleryTitle")}</Link>
                             </div>
                             <div>
-                                <Link to='contact-us' smooth={true} duration={500} className='text-footer menu-links'> {'>'} Contact Us</Link>
+                                <Link to='contact-us' smooth={true} duration={500} className='text-footer menu-links'> {'>'} {t("contactUsTitle")}</Link>
                             </div>
                         </Col>
                     </Row>

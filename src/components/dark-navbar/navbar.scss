@@ -11,11 +11,11 @@
         text-underline-offset: 10px;
     }
 
-    #offcanvasNavbarDropdownDark {
+    #offcanvasNavbarDropdownDark, #language-dropdown-dark {
         color: black;
         
     }
-    #offcanvasNavbarDropdownDark.show, #offcanvasNavbarDropdownDark:hover {
+    #offcanvasNavbarDropdownDark.show, #offcanvasNavbarDropdownDark:hover, #language-dropdown-dark.show, #language-dropdown-dark:hover {
         color: black !important;
         
     }

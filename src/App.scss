@@ -23,7 +23,6 @@ body {
   background-size: contain;  
   background-repeat: repeat-y;
   background-position: top center;
-  // Adjust the background image for smaller screens
   
   @media (max-width: 768px) {
       background-size: contain; // Ensure the entire image fits

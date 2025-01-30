@@ -5,8 +5,11 @@ import J7 from "../../assets/about-us/J7.jpg";
 import callToActionPhoto from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 2.49.09 PM (2).jpeg';
 import HappeningNow from "../happening-now/HappeningNow";
 import "./about-us.scss";
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+  const { t } = useTranslation("about-us");
+  const { line1, line2 } = t("description1");
   return (
     <section className="about-us-wrapper" id="about-us">
       <div className="about-us-div">
@@ -17,21 +20,13 @@ const AboutUs = () => {
               <div className="row g-5 align-items-center">
                 <div className="col-lg-6" >
                   <h1 className="mb-4 about-us-title" data-aos='fade-right'>
-                    Learn More About Our Work And Our Cultural Activities
+                    {t("learnMoreAbout")}
                   </h1>
                   <p data-aos='fade-right' data-aos-delay={50}>
-                    JAIN INTERNATIONAL PUBLIC SCHOOL was established in 2013 and
-                    it is managed by the Pvt. Unaided. It is located in Urban
-                    area. It is located in VALSAD block of VALSAD district of
-                    Gujrat.
+                    {line1}
                   </p>
                   <p className="mb-4" data-aos='fade-right' data-aos-delay={100}>
-                    The school consists of Grades from 1 to 5. The school is
-                    Co-educational and it have an attached pre-primary section.
-                    The school is N/A in nature and is not using school building
-                    as a shift-school. English is the medium of instructions in
-                    this school. This school is approachable by all weather
-                    road. In this school academic session starts in April.
+                    {line2}
                   </p>
                   <div className="row g-4 align-items-center">
                     <div className="col-sm-6">
@@ -97,24 +92,9 @@ const AboutUs = () => {
                   </div>
                   <div className="col-lg-6" data-aos='fade-in' data-aos-delay={400}>
                     <div className="h-100 d-flex flex-column justify-content-center p-5">
-                      <h1 className="mb-4 become-a-school-title">Become A School</h1>
+                      <h1 className="mb-4 become-a-school-title">{t("becomeASchoolTitle")}</h1>
                       <p className="mb-4">
-                        The school has Private building. It has got 6 classrooms
-                        for instructional purposes. All the classrooms are in
-                        good condition. It has 2 other rooms for non-teaching
-                        activities. The school has a separate room for Head
-                        master/Teacher. The school has Pucca boundary wall. The
-                        school has have electric connection. The source of
-                        Drinking Water in the school is Tap Water and it is
-                        functional. The school has 1 boys toilet and it is
-                        functional. and 1 girls toilet and it is functional. The
-                        school has a playground. The school has a library and
-                        has 200 books in its library. The school does not need
-                        ramp for disabled children to access classrooms. The
-                        school has 4 computers for teaching and learning
-                        purposes and all are functional. The school is not
-                        having a computer aided learning lab. The school is Not
-                        Applicable providing mid-day meal.
+                        {t("becomeASchoolDescription")}
                       </p>
                       
                     </div>

@@ -1,0 +1,14 @@
+{
+    "certificateNames": {
+        "certificateOfRegistration": "पंजीकरण प्रमाणपत्र",
+        "buildingSafetyCertificate": "भवन सुरक्षा प्रमाणपत्र",
+        "landCertificate": "भूमि प्रमाणपत्र",
+        "mandatoryDisclosureDetails": "अनिवार्य प्रकटीकरण विवरण",
+        "noObjectionCertificate": "कोई आपत्ति प्रमाणपत्र",
+        "recognitionCertificate": "मान्यता प्रमाणपत्र",
+        "waterAndSanitationCertificate": "जल और स्वच्छता प्रमाणपत्र",
+        "waterSampleTest": "जल नमूना परीक्षण",
+        "selfDeclaration": "स्वयं घोषणा",
+        "schoolManagementCommittee": "स्कूल प्रबंधन समिति"
+    }
+}

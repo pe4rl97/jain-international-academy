@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import './certificate.scss';
+import { useTranslation } from "react-i18next";
 
 const Certificate = () => {
   const location = useLocation();
@@ -9,6 +10,7 @@ const Certificate = () => {
   const [imageLink, setImageLink] = useState("");
   const [pdfLink, setPdfLink] = useState("");
   const [isMandatoryDisclosure, setIsMandatoryDisclosure] = useState(false);
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,7 +51,7 @@ const Certificate = () => {
         {/* Mandatory Disclosure Section */}
         {isMandatoryDisclosure && (
           <Container className="my-5">
-            <h2 className="text-center my-4">School Video</h2>
+            <h2 className="text-center my-4">{t("schoolVideoTitle")}</h2>
             <Row className="justify-content-center">
               <Col md={8}>
                 <video controls className="w-100">

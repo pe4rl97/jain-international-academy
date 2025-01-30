@@ -11,15 +11,17 @@ import photo6 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 2.4
 import photo7 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 3.09.34 PM.jpeg'
 import video from '../../assets/JIPS.mp4'
 import './gallery.scss'
+import { useTranslation } from 'react-i18next'
 
 const Gallery = () => {
+    const { t } = useTranslation("common");
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
     }, []);
     return (
         <section id='gallery-images' className='main-content'>
             <Container>
-                <h1 className='text-center gallery-title'><span className='bg-white'>Gallery</span></h1>
+                <h1 className='text-center gallery-title'><span className='bg-white'>{t("galleryTitle")}</span></h1>
                 <Container className='photos'>
                     <Row className='align-items-center justify-content-center'>
                         <Col xs='6' md='6' lg='8' data-aos='fade-up' >
@@ -103,7 +105,7 @@ const Gallery = () => {
                     </Row>
                 </Container>
                 <Container className='video-container'>
-                    <h1 className="text-center school-video-title"><span className='bg-white'>School Video</span></h1>
+                    <h1 className="text-center school-video-title"><span className='bg-white'>{t("schoolVideoTitle")}</span></h1>
                     <Row className="justify-content-center">
                         <Col md={8}>
                         <video controls className="w-100 bg-white p-4">

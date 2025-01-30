@@ -1,0 +1,12 @@
+{
+    "home": "HOME",
+    "aboutUs": "ABOUT US",
+    "gallery": "GALLERY",
+    "certificates": "CERTIFICATES",
+    "contactUs": "CONTACT US",
+    "languages": {
+        "en": "ENGLISH",
+        "hi": "HINDI",
+        "gu": "GUJARATI"
+    }
+}
