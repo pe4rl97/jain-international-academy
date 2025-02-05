@@ -28,6 +28,7 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
+                                
                                     </div>
                                     
                                 </div>
@@ -39,6 +40,7 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
+                                
                                     </div>
                                     
                                 </div>
@@ -50,6 +52,7 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
+                                
                                     </div>
                                     
                                 </div>
@@ -61,6 +64,7 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
+                                
                                     </div>
                                     
                                 </div>
@@ -72,6 +76,7 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
+                                
                                     </div>
                                     
                                 </div>
@@ -83,6 +88,7 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
+                                
                                     </div>
                                     
                                 </div>
@@ -94,6 +100,7 @@ const Gallery = () => {
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
                                         <h3 className='heading'><IoSearch /></h3>   
+                                
                                     </div>
                                     
                                 </div>

@@ -1,28 +1,32 @@
 import { Col, Container, Row } from "react-bootstrap"
 import { useInView } from "react-intersection-observer"
 import HappeningNowCards from "../happening-now-cards/HappeningNowCards"
+import photo1 from '../../assets/indian-teacher-uses-laptop.png'
+import photo2 from '../../assets/individual-education-plan.jpg'
+import photo3 from '../../assets/karate-students.jpg'
+import photo4 from '../../assets/teacher-with-children-interaction.png'
 import './happening-now.scss'
 
 const cardsData = {
     data: [{
         id: 1,
         heading: 'Group Activities in School',
-        image_url: '/src/assets/indian-teacher-uses-laptop.png',
+        image_url: photo1,
         text: "Group activities in school foster teamwork, creativity, learning, and friendships.",
     }, {
         id: 2,
         heading: 'Individual Education Plan',
-        image_url: '/src/assets/individual-education-plan.jpg',
+        image_url: photo2,
         text: "Individual Education Plan supports personalized learning for students.",
     }, {
         id: 3,
         heading: 'Experienced Coaches',
-        image_url: '/src/assets/karate-students.jpg',
+        image_url: photo3,
         text: "Experienced coaches for Sports, Karate, Music and Co-curricular Activities",
     }, {
         id: 4,
         heading: 'Interactive Classroom',
-        image_url: '/src/assets/teacher-with-children-interaction.png',
+        image_url: photo4,
         text: "Guidance through interactive role play and meaningful conversation between teacher and students.",
     }]
 }

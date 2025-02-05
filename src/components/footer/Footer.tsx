@@ -1,11 +1,11 @@
+import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
-import logo from '../../assets/logo-transparentbg.png';
-import './footer.scss';
-import { Link } from 'react-scroll'
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdEmail, MdPhone } from 'react-icons/md';
-import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/logo-transparentbg.png';
+import './footer.scss';
 
 const Footer = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -116,11 +116,13 @@ const Footer = () => {
                                     <MdPhone className='text-footer contact-details-icon' />
                                 </Col>
                                 <Col>
-                                    <div className='text-footer'>
+                                    <a href="tel:+919925651745" className='text-footer text-decoration-none'>
                                         +91 99256 51745
-                                    </div>
-                                    <div className='text-footer'>
-                                        +91 99207 57191
+                                    </a>
+                                    <div>
+                                        <a href="tel:+919920757191" className='text-footer text-decoration-none'>
+                                            +91 99207 57191
+                                        </a>
                                     </div>
                                 </Col>
                             </Row>
@@ -134,19 +136,28 @@ const Footer = () => {
                                 <Link to='/' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className='text-footer menu-links'>{'>'} Home</Link>
                             </div>
                             <div>
-                                <Link to='about-us' smooth={true} duration={500} className='text-footer menu-links'>{'>'} About us</Link>
+                                <Link to='/#about-us' className='text-footer menu-links'>{'>'} About us</Link>
                             </div>
                             <div>
-                                <Link to='certificates' smooth={true} duration={500} offset={-40} className='text-footer menu-links'> {'>'} Certificates</Link>
+                                <Link to='/staff' className='text-footer menu-links'> {'>'} Staff</Link>
                             </div>
                             <div>
-                                <Link to='gallery-images' smooth={true} duration={500} className='text-footer menu-links'> {'>'} Gallery</Link>
+                                <Link to='/#certificates' className='text-footer menu-links'> {'>'} Certificates</Link>
                             </div>
                             <div>
-                                <Link to='contact-us' smooth={true} duration={500} className='text-footer menu-links'> {'>'} Contact Us</Link>
+                                <Link to='/#gallery-images' className='text-footer menu-links'> {'>'} Gallery</Link>
+                            </div>
+                            <div>
+                                <Link to='/#contact-us' className='text-footer menu-links'> {'>'} Contact Us</Link>
                             </div>
                         </Col>
                     </Row>
+                    <hr className='text-white'/>
+                    <p className='text-footer'>Designed & Maintained by 
+                        <a href="https://www.tag97.com/" target='_blank' className='text-decoration-none'>
+                            <span className='fw-bold tag-97-orange'>{' <TAG'}</span><span className='fw-bold tag-97-blue'>{' 97>'}</span>
+                        </a>
+                    </p>
                 </Container>
             </footer>
 

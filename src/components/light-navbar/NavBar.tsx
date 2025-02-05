@@ -113,7 +113,19 @@ const NavBar = () => {
                         >HOME</Nav.Link>
                         <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} offset={-55} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
                         <Nav.Link as={ScrollLink} to="gallery-images" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>GALLERY</Nav.Link>
-                        <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdown" className="me-2 rounded-0" active={activeSection === "certificates"}>
+                        <NavDropdown title="FACILITY" id="offcanvasNavbarDropdow1" className="me-2 rounded-0">
+                            <NavDropdown.Item as={Link} to={'/facility/art-craft'} className="mb-2" onClick={handleCloseOffcanvas}>Art & Craft</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/biology-lab'} className="mb-2" onClick={handleCloseOffcanvas}>Biology Lab</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/chemistry-lab'} className="mb-2" onClick={handleCloseOffcanvas}>Chemistry Lab</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/computer-lab'} className="mb-2" onClick={handleCloseOffcanvas}>Computer Lab</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/karate'} className="mb-2" onClick={handleCloseOffcanvas}>Karate</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/library'} className="mb-2" onClick={handleCloseOffcanvas}>Library</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/maths-lab'} className="mb-2" onClick={handleCloseOffcanvas}>Maths Lab</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/music'} className="mb-2" onClick={handleCloseOffcanvas}>Music</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={'/facility/physics-lab'} className="mb-2" onClick={handleCloseOffcanvas}>Physics Lab</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link as={Link} to="/staff" onClick={handleCloseOffcanvas} className={`me-2`}>STAFF</Nav.Link>
+                        <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdown2" className="me-2 rounded-0" active={activeSection === "certificates"}>
                             <NavDropdown.Item as={Link} to={`/certificate?name=Certificate of Registration&imageLink=${certificateOfRegistrationImg}&pdfLink=${certificateOfRegistrationPdf}`} className="mb-2">Certificate of Registration</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to={`/certificate?name=Building Safety Certificate&imageLink=${buildingSafetyCertificateImg}&pdfLink=${buildingSafetyCertificatePdf}`} className="mb-2">Building Safety Certificate</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to={`/certificate?name=Land Certificate&imageLink=${landCertificateImg}&pdfLink=${landCertificatePdf}`} className="mb-2">Land Certificate</NavDropdown.Item>

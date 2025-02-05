@@ -22,8 +22,20 @@ const ContactUs = () => {
                                 </div>
                                 <div className="mb-4">
                                     <h3>Phone</h3>
-                                    <div><span className="contact-details-div">+91 99256 51745</span></div>
-                                    <div><span className="contact-details-div">+91 99207 57191</span></div>
+                                    <div>
+                                        <span className="contact-details-div">
+                                            <a href="tel:+919925651745">
+                                                +91 99256 51745
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span className="contact-details-div">
+                                            <a href="tel:+919920757191">
+                                                +91 99207 57191
+                                            </a>
+                                        </span>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>

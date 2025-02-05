@@ -24,7 +24,7 @@ const Stats = () => {
                                 <div className="subtitle-div">Students</div>
                             </Col>
                             <Col md="3" xs="4" className="mb-4">
-                                <h1 className="title-h1">1 to {inView && <CountUp start={1} end={8} duration={5} />}</h1>
+                                <h1 className="title-h1">1 to {inView && <CountUp start={1} end={10} duration={4} />}</h1>
                                 <div className="subtitle-div">Class</div>
                             </Col>
                             <Col md="3" xs="4" className="mb-4">

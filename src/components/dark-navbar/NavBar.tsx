@@ -20,11 +20,39 @@ import selfDeclarationPdf from '../../assets/certificates/Self Declaration.pdf'
 import selfDeclarationImg from '../../assets/certificates/Self Declaration.jpg'
 import schoolManagementCommitteePdf from '../../assets/certificates/School Management Committee.pdf'
 import schoolManagementCommitteeImg from '../../assets/certificates/School Management Committee.jpg'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import logo from '../../assets/logo.jpg'
 import { useCallback, useEffect, useState } from "react"
 
+const handleHeader = () => {
+    const path = location.pathname;
+    if (path === '/staff')
+        return 'Staff';
+    else if (path === '/facility/art-craft')
+        return 'Art & Craft'
+    else if (path === '/facility/biology-lab')
+        return 'Biology Lab'
+    else if (path === '/facility/chemistry-lab')
+        return 'Chemistry Lab'
+    else if (path === '/facility/physics-lab')
+        return 'Physics Lab'
+    else if (path === '/facility/computer-lab')
+        return 'Computer Lab'
+    else if (path === '/facility/karate')
+        return 'Karate'
+    else if (path === '/facility/library')
+        return 'Library'
+    else if (path === '/facility/maths-lab')
+        return 'Maths Lab'
+    else if (path === '/facility/music')
+        return 'Music'
+    else 
+        return 'Certificate'
+}
+
 const NavBar = () => {
+    const location = useLocation();
+    const [pageHeader, setPageHeader] = useState(handleHeader);
     const [showOffcanvas, setShowOffcanvas] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -35,6 +63,10 @@ const NavBar = () => {
             setScrolled(false);
         }
     }, []);
+
+    useEffect(() => {
+        setPageHeader(handleHeader)
+    }, [location.pathname]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -49,7 +81,7 @@ const NavBar = () => {
         <>
             <Navbar fixed="top" expand='lg' className={`bg-white ${scrolled ? '' : 'navbar-shadow-0'} `}>
                 <Container>
-                    <Navbar.Brand as={Link} to="/">
+                    <Navbar.Brand as={Link} to="/#home">
                         <span><img src={logo} height={40} className="me-3"/></span>
                         <span className="fw-bold h5 poppins-font">JIPS</span>
                     </Navbar.Brand>
@@ -68,7 +100,19 @@ const NavBar = () => {
                                 <Nav.Link as={Link} to="/" className="me-2 dark">HOME</Nav.Link>
                                 <Nav.Link as={Link} to="/#about-us" className="me-2 dark">ABOUT US</Nav.Link>
                                 <Nav.Link as={Link} to="/#gallery-images" className="me-2 dark">GALLERY</Nav.Link>
-                                <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdownDark" className="me-2 rounded-0 text-dark">
+                                <NavDropdown title="FACILITY" id="offcanvasNavbarDropdownDark1" className="me-2 rounded-0 text-dark">
+                                    <NavDropdown.Item as={Link} to={'/facility/art-craft'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Art & Craft</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/biology-lab'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Biology Lab</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/chemistry-lab'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Chemistry Lab</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/computer-lab'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Computer Lab</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/karate'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Karate</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/library'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Library</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/maths-lab'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Maths Lab</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/music'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Music</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={'/facility/physics-lab'} className="mb-2 dark" onClick={handleCloseOffcanvas}>Physics Lab</NavDropdown.Item>
+                                </NavDropdown>
+                                <Nav.Link as={Link} to="/staff" className="me-2 dark">STAFF</Nav.Link>
+                                <NavDropdown title="CERTIFICATES" id="offcanvasNavbarDropdownDark2" className="me-2 rounded-0 text-dark">
                                     <NavDropdown.Item as={Link} to={`/certificate?name=Certificate of Registration&imageLink=${certificateOfRegistrationImg}&pdfLink=${certificateOfRegistrationPdf}`} className="mb-2 dark" onClick={handleCloseOffcanvas} >Certificate of Registration</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to={`/certificate?name=Building Safety Certificate&imageLink=${buildingSafetyCertificateImg}&pdfLink=${buildingSafetyCertificatePdf}`} className="mb-2 dark" onClick={handleCloseOffcanvas} >Building Safety Certificate</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to={`/certificate?name=Land Certificate&imageLink=${landCertificateImg}&pdfLink=${landCertificatePdf}`} className="mb-2 dark" onClick={handleCloseOffcanvas} >Land Certificate</NavDropdown.Item>
@@ -87,15 +131,18 @@ const NavBar = () => {
                 </Container>
             </Navbar>
             <div className="py-5 page-header position-relative mb-5 bg-transparent header" >
-                <div className="container py-5 ms-5">
-                    <h1 className="display-2 text-white mb-4 header-title" data-aos='fade-down'>Certificate</h1>
-                    <nav aria-label="breadcrumb animated slideInDown">
-                        <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><Link to="/" style={{textDecoration:'none'}}>Home</Link></li>           
-                            <li className="breadcrumb-item text-white active" aria-current="page">Certificate</li>
-                        </ol>
-                    </nav>
-                </div>
+                <Container>
+                    <div className="py-5 ms-5">
+                        <h1 className="display-2 text-white mb-4 header-title" data-aos='fade-down'>{pageHeader}</h1>
+                        <nav aria-label="breadcrumb animated slideInDown">
+                            <ol className="breadcrumb">
+                                <li className="breadcrumb-item"><Link to="/" style={{textDecoration:'none'}}>Home</Link></li>   
+                                {location.pathname.includes('facility') && <li className="breadcrumb-item text-white active">Facility</li>}           
+                                <li className="breadcrumb-item text-white active" aria-current="page">{pageHeader}</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </Container>
             </div>
         </>
     )

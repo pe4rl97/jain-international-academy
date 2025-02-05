@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
+import video from '../../assets/JIPS.mp4'
 import './certificate.scss';
 
 const Certificate = () => {
@@ -53,7 +54,7 @@ const Certificate = () => {
             <Row className="justify-content-center">
               <Col md={8}>
                 <video controls className="w-100">
-                  <source src="https://jaininternationalacademy.com/assets/JIPS.mp4" type="video/mp4" />
+                  <source src={video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </Col>

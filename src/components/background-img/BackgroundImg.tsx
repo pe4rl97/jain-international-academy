@@ -4,7 +4,7 @@ import './background-img.scss'
 
 const BackgroundImg = () => {
     return (
-        <div className="bg-img">
+        <div className="bg-img" id='home'>
             <NavBar/>
             <MainHeader/>
         </div>
