@@ -1,8 +1,7 @@
-import { Col, Container, Row } from 'react-bootstrap'
-import './main-header.scss'
-import { Link } from 'react-scroll'
-import { motion } from "framer-motion";
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { TypeAnimation } from "react-type-animation";
+import './main-header.scss';
 
 const MainHeader = () => {
     return (
@@ -10,44 +9,29 @@ const MainHeader = () => {
             <Row className='h-100 justify-content-center align-items-center'>
                 <Col xs='12'>
                     <Row>
-                        <Col xs='12'>
-                            <motion.h1 
-                                initial={{ opacity: 0, y: -50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1 }}
-                                className='text-center'
-                            >
-                                <TypeAnimation
-                                    sequence={[
-                                        'Jain International', 1000
-                                    ]}
-                                    speed={50}
-                                    repeat={0}
-                                    className='jumbo-header'
-                                    cursor={false}
-                                />
-                            </motion.h1>
+                        <Col xs='12' className='text-center' data-aos='fade-down' data-aos-duration='900'>
+                            <TypeAnimation
+                                sequence={[
+                                    '', 100,
+                                    'Jain International', 1000
+                                ]}
+                                speed={50}
+                                repeat={0}
+                                className='jumbo-header'
+                                cursor={false}
+                            />
                         </Col>
-                        <Col xs='12'>
-                            <motion.h1 
-                                initial={{ opacity: 0, y: -50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1 }}
-                                className='text-center'
-                            >
-                                <TypeAnimation
-                                    sequence={[
-                                        '', 1000,
-                                        'Public School', 1000
-                                    ]}
-                                    speed={50}
-                                    repeat={0}
-                                    className='jumbo-header'
-                                    cursor={false}
-                                />
-                            </motion.h1>
+                        <Col xs='12' className='text-center' data-aos='fade-in' data-aos-delay='800' data-aos-duration='900'>
+                            <TypeAnimation
+                                sequence={[
+                                    ' ', 1000,
+                                    'Public School', 1000
+                                ]}
+                                speed={50}
+                                repeat={0}
+                                className='jumbo-header'
+                                cursor={false}
+                            />
                         </Col>
                     </Row>
                     <Row className='justify-content-center mt-3'>
@@ -57,7 +41,7 @@ const MainHeader = () => {
                     </Row>
                     <Row className='justify-content-center'>
                         <Col md='12' xs='12' className='btn-col text-center'>
-                            <Link to='contact-us' smooth={true} duration={500}><button className='get-in-touch-button'>Get In Touch</button></Link>
+                            <Link to='/#contact-us'><button className='get-in-touch-button'>Get In Touch</button></Link>
                         </Col>
                     </Row>
                     

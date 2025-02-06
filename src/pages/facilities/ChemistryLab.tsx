@@ -1,18 +1,18 @@
-import { Fancybox } from "@fancyapps/ui"
 import { useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { IoSearch } from "react-icons/io5"
 import { chemistryPhoto1, chemistryPhoto2, chemistryPhoto3, chemistryPhoto4, chemistryPhoto5 } from "../../assets/facilities/chemistry-lab"
 import '../../components/gallery/gallery.scss'
 import './facilities.scss'
+import { Fancybox } from "@fancyapps/ui"
 
 const ChemistryLab = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
-    }, []);
-    useEffect(() => {
-        window.scrollTo(0,0);
     }, [])
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <Container className="facility-paragraph main-content">
             <h1 data-aos='fade-in' data-aos-delay='200'>Chemistry Lab: A Hub for Scientific Exploration</h1>

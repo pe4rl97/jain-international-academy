@@ -46,8 +46,9 @@ const handleHeader = () => {
         return 'Maths Lab'
     else if (path === '/facility/music')
         return 'Music'
-    else 
-        return 'Certificate'
+    else if (path.includes('certificate')) {
+        return 'Certificate';
+    }
 }
 
 const NavBar = () => {
@@ -97,7 +98,7 @@ const NavBar = () => {
                     </Offcanvas.Header>
                         <Offcanvas.Body className="ms-4">
                         <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link as={Link} to="/" className="me-2 dark">HOME</Nav.Link>
+                                <Nav.Link as={Link} to="/#home" className="me-2 dark">HOME</Nav.Link>
                                 <Nav.Link as={Link} to="/#about-us" className="me-2 dark">ABOUT US</Nav.Link>
                                 <Nav.Link as={Link} to="/#gallery-images" className="me-2 dark">GALLERY</Nav.Link>
                                 <NavDropdown title="FACILITY" id="offcanvasNavbarDropdownDark1" className="me-2 rounded-0 text-dark">
@@ -137,7 +138,7 @@ const NavBar = () => {
                         <nav aria-label="breadcrumb animated slideInDown">
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item"><Link to="/" style={{textDecoration:'none'}}>Home</Link></li>   
-                                {location.pathname.includes('facility') && <li className="breadcrumb-item text-white active">Facility</li>}           
+                                {location.pathname.includes('facility') && <li className="breadcrumb-item text-white active">Facility</li>}
                                 <li className="breadcrumb-item text-white active" aria-current="page">{pageHeader}</li>
                             </ol>
                         </nav>

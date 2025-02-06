@@ -20,7 +20,6 @@ import selfDeclarationPdf from '../../assets/certificates/Self Declaration.pdf'
 import selfDeclarationImg from '../../assets/certificates/Self Declaration.jpg'
 import schoolManagementCommitteePdf from '../../assets/certificates/School Management Committee.pdf'
 import schoolManagementCommitteeImg from '../../assets/certificates/School Management Committee.jpg'
-import { Link as ScrollLink } from "react-scroll"
 import { Link } from "react-router-dom"
 import { useCallback, useEffect, useState } from "react"
 import logo from '../../assets/logo-transparentbg.png'
@@ -104,15 +103,15 @@ const NavBar = () => {
                     <Offcanvas.Body className="ms-4">
                     <Nav className="justify-content-end flex-grow-1 pe-3">
                         <Nav.Link 
-                            as={ScrollLink} to="/" 
+                            as={Link} to="/#home" 
                             onClick={() => {
                                 window.scrollTo({ top: 0, behavior: "smooth" });
                                 handleCloseOffcanvas();
                             }} 
                             className={`me-2 ${activeSection === "home" ? "active" : ""}`}
                         >HOME</Nav.Link>
-                        <Nav.Link as={ScrollLink} to="about-us" smooth={true} delay={0} duration={500} offset={-55} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
-                        <Nav.Link as={ScrollLink} to="gallery-images" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>GALLERY</Nav.Link>
+                        <Nav.Link as={Link} to="/#about-us" onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "about-us" ? "active" : ""}`}>ABOUT US</Nav.Link>
+                        <Nav.Link as={Link} to="/#gallery-images" onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "gallery-images" ? "active" : ""}`}>GALLERY</Nav.Link>
                         <NavDropdown title="FACILITY" id="offcanvasNavbarDropdow1" className="me-2 rounded-0">
                             <NavDropdown.Item as={Link} to={'/facility/art-craft'} className="mb-2" onClick={handleCloseOffcanvas}>Art & Craft</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to={'/facility/biology-lab'} className="mb-2" onClick={handleCloseOffcanvas}>Biology Lab</NavDropdown.Item>
@@ -137,7 +136,7 @@ const NavBar = () => {
                             <NavDropdown.Item as={Link} to={`/certificate?name=Self Declaration&imageLink=${selfDeclarationImg}&pdfLink=${selfDeclarationPdf}`} className="mb-2">Self Declaration</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to={`/certificate?name=School Management Committee&imageLink=${schoolManagementCommitteeImg}&pdfLink=${schoolManagementCommitteePdf}`} className="mb-2">School Management Committee</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={ScrollLink} to="contact-us" smooth={true} duration={500} onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "contact-us" ? "active" : ""}`}>CONTACT US</Nav.Link>                            </Nav>
+                        <Nav.Link as={Link} to="/#contact-us" onClick={handleCloseOffcanvas} className={`me-2 ${activeSection === "contact-us" ? "active" : ""}`}>CONTACT US</Nav.Link>                            </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
             </Container>

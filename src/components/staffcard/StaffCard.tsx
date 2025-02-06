@@ -15,7 +15,7 @@ const StaffCard = ({ imageUrl, name, designation, qualification, experience}: St
                             <div className="staff-card__title text-center">{name}</div>
                         </Col>
                         <Col xs='12'>
-                            <div className="staff-card__subtitle">Designation: {designation}</div>
+                            <div className="staff-card__subtitle">Designation: <span className="fw-bold">{designation}</span></div>
                         </Col>
                         <Col xs='12'>
                             <div className="staff-card__subtitle ">Qualification: {qualification}</div>

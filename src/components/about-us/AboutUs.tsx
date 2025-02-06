@@ -20,18 +20,15 @@ const AboutUs = () => {
                     Learn More About Our Work And Our Cultural Activities
                   </h1>
                   <p data-aos='fade-right' data-aos-delay={50}>
-                    JAIN INTERNATIONAL PUBLIC SCHOOL was established in 2013 and
-                    it is managed by the Pvt. Unaided. It is located in Urban
-                    area. It is located in VALSAD block of VALSAD district of
-                    Gujrat.
+                    <strong>JAIN INTERNATIONAL PUBLIC SCHOOL</strong>, established in 2013, is a 
+                    privately managed unaided institution located in an urban area 
+                    within the <strong>VALSAD</strong> block of <strong>VALSAD</strong> district, <strong>Gujarat</strong>.
                   </p>
                   <p className="mb-4" data-aos='fade-right' data-aos-delay={100}>
-                    The school consists of Grades from 1 to 5. The school is
-                    Co-educational and it have an attached pre-primary section.
-                    The school is N/A in nature and is not using school building
-                    as a shift-school. English is the medium of instructions in
-                    this school. This school is approachable by all weather
-                    road. In this school academic session starts in April.
+                    The school offers education from grades 1 to 10 and follows a co-educational 
+                    system with an attached pre-primary section. It operates as a standalone institution 
+                    and does not function as a shift-school. English is the medium of instruction, and the 
+                    school is easily accessible via an all-weather road. The academic session begins in April.
                   </p>
                   <div className="row g-4 align-items-center">
                     <div className="col-sm-6">
@@ -99,22 +96,12 @@ const AboutUs = () => {
                     <div className="h-100 d-flex flex-column justify-content-center p-5">
                       <h1 className="mb-4 become-a-school-title">Become A School</h1>
                       <p className="mb-4">
-                        The school has Private building. It has got 6 classrooms
-                        for instructional purposes. All the classrooms are in
-                        good condition. It has 2 other rooms for non-teaching
-                        activities. The school has a separate room for Head
-                        master/Teacher. The school has Pucca boundary wall. The
-                        school has have electric connection. The source of
-                        Drinking Water in the school is Tap Water and it is
-                        functional. The school has 1 boys toilet and it is
-                        functional. and 1 girls toilet and it is functional. The
-                        school has a playground. The school has a library and
-                        has 200 books in its library. The school does not need
-                        ramp for disabled children to access classrooms. The
-                        school has 4 computers for teaching and learning
-                        purposes and all are functional. The school is not
-                        having a computer aided learning lab. The school is Not
-                        Applicable providing mid-day meal.
+                        The school operates in a private building with well-maintained classrooms for instructional purposes. 
+                        Additionally, there are rooms designated for non-teaching activities and a separate office for administrative use. 
+                        The school is enclosed by a secure boundary wall and has a reliable electricity connection. A functional tap water 
+                        system provides drinking water. Separate, fully functional toilets are available for students. Recreational facilities 
+                        include a playground. The library contains a collection of books to support learning. Accessibility features such as ramps 
+                        are not required for students with disabilities. The school is equipped with computers for teaching and learning.
                       </p>
                       
                     </div>

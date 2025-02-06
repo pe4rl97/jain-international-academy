@@ -1,18 +1,18 @@
-import { Fancybox } from "@fancyapps/ui"
 import { useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { IoSearch } from "react-icons/io5"
 import { libraryPhoto1, libraryPhoto2, libraryPhoto3, libraryPhoto4, libraryPhoto5, libraryPhoto6 } from "../../assets/facilities/library"
 import '../../components/gallery/gallery.scss'
 import './facilities.scss'
+import { Fancybox } from "@fancyapps/ui"
 
 const Library = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
-    }, []);
-    useEffect(() => {
-        window.scrollTo(0,0);
     }, [])
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <Container className="facility-paragraph main-content">
             <h1 data-aos='fade-in' data-aos-delay='200'>Library: A Gateway to Knowledge and Learning</h1>
@@ -26,10 +26,10 @@ const Library = () => {
             </div>
             <Row className="justify-content-center mb-4">
                 <Col xs='12'>
-                    <h4 className="facility-subheading text-center" data-aos='fade-in'>“I have always imagined that Paradise will be a kind of a Library.”</h4>
+                    <h4 className="facility-subheading text-center" data-aos='fade-in'>“The only thing you absolutely have to know is the location of the library.”</h4>
                 </Col>
                 <Col md='5' xs='12' data-aos='fade-in'>
-                    <p className="text-end" > - Jorge Luis Borges</p>
+                    <p className="text-end" > - Albert Einstein</p>
                 </Col>
             </Row>
             

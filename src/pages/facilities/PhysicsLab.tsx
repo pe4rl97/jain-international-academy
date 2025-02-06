@@ -1,18 +1,18 @@
-import { Fancybox } from "@fancyapps/ui"
 import { useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { IoSearch } from "react-icons/io5"
-import { chemistryPhoto1, chemistryPhoto2, chemistryPhoto3, chemistryPhoto4, chemistryPhoto5 } from "../../assets/facilities/chemistry-lab"
+import { physicsPhoto1, physicsPhoto2, physicsPhoto3, physicsPhoto4 } from "../../assets/facilities/physics-lab"
 import '../../components/gallery/gallery.scss'
 import './facilities.scss'
+import { Fancybox } from "@fancyapps/ui"
 
 const PhysicsLab = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
-    }, []);
-    useEffect(() => {
-        window.scrollTo(0,0);
     }, [])
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <Container className="facility-paragraph main-content">
             <h1 data-aos='fade-in' data-aos-delay='200'>Physics Lab: Bridging Theory and Practical Application</h1>
@@ -45,8 +45,8 @@ const PhysicsLab = () => {
             <Container className="photos">
                 <Row className="align-items-center justify-content-center">
                 <Col xs='6' md='6' lg='8' data-aos='fade-up'>
-                        <a href={chemistryPhoto3} className='d-block photo-item' data-fancybox='gallery'>
-                            <img src={chemistryPhoto3} alt='Image' className='img-fluid'/>
+                        <a href={physicsPhoto1} className='d-block photo-item' data-fancybox='gallery'>
+                            <img src={physicsPhoto1} alt='Image' className='img-fluid'/>
                             <div className='photo-text-more'>
                                 <div className='photo-text-more'>
                                     <h3 className='heading'><IoSearch /></h3>
@@ -55,8 +55,8 @@ const PhysicsLab = () => {
                         </a>
                     </Col>
                     <Col xs='6' md='6' lg='4' data-aos='fade-up' data-aos-delay='100'>
-                        <a href={chemistryPhoto5} className='d-block photo-item' data-fancybox='gallery'>
-                            <img src={chemistryPhoto5} alt='Image' className='img-fluid'/>
+                        <a href={physicsPhoto2} className='d-block photo-item' data-fancybox='gallery'>
+                            <img src={physicsPhoto2} alt='Image' className='img-fluid'/>
                             <div className='photo-text-more'>
                                 <div className='photo-text-more'>
                                     <h3 className='heading'><IoSearch /></h3>
@@ -64,9 +64,9 @@ const PhysicsLab = () => {
                             </div>
                         </a>
                     </Col>
-                    <Col xs='6' md='6' lg='4' data-aos='fade-up'>
-                        <a href={chemistryPhoto1} className='d-block photo-item' data-fancybox='gallery'>
-                            <img src={chemistryPhoto1} alt='Image' className='img-fluid'/>
+                    <Col xs='6' md='6' lg='6' data-aos='fade-up'>
+                        <a href={physicsPhoto3} className='d-block photo-item' data-fancybox='gallery'>
+                            <img src={physicsPhoto3} alt='Image' className='img-fluid'/>
                             <div className='photo-text-more'>
                                 <div className='photo-text-more'>
                                     <h3 className='heading'><IoSearch /></h3>
@@ -74,19 +74,9 @@ const PhysicsLab = () => {
                             </div>
                         </a>
                     </Col>
-                    <Col xs='6' md='6' lg='4' data-aos='fade-up' data-aos-delay='100'>
-                        <a href={chemistryPhoto2} className='d-block photo-item' data-fancybox='gallery'>
-                            <img src={chemistryPhoto2} alt='Image' className='img-fluid'/>
-                            <div className='photo-text-more'>
-                                <div className='photo-text-more'>
-                                    <h3 className='heading'><IoSearch /></h3>
-                                </div>
-                            </div>
-                        </a>
-                    </Col>
-                    <Col xs='6' md='6' lg='4' data-aos='fade-up' data-aos-delay='200'>
-                        <a href={chemistryPhoto4} className='d-block photo-item' data-fancybox='gallery'>
-                            <img src={chemistryPhoto4} alt='Image' className='img-fluid'/>
+                    <Col xs='6' md='6' lg='6' data-aos='fade-up' data-aos-delay='100'>
+                        <a href={physicsPhoto4} className='d-block photo-item' data-fancybox='gallery'>
+                            <img src={physicsPhoto4} alt='Image' className='img-fluid'/>
                             <div className='photo-text-more'>
                                 <div className='photo-text-more'>
                                     <h3 className='heading'><IoSearch /></h3>

@@ -1,5 +1,3 @@
-import { Fancybox } from '@fancyapps/ui'
-import { useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { IoSearch } from 'react-icons/io5'
 import photo1 from '../../assets/gallery-photos/mainSchool.jpeg'
@@ -11,11 +9,13 @@ import photo6 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 2.4
 import photo7 from '../../assets/gallery-photos/WhatsApp Image 2024-06-05 at 3.09.34 PM.jpeg'
 import video from '../../assets/JIPS.mp4'
 import './gallery.scss'
+import { useEffect } from 'react'
+import { Fancybox } from '@fancyapps/ui'
 
 const Gallery = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
-    }, []);
+    }, [])
     return (
         <section id='gallery-images' className='main-content'>
             <Container>
@@ -27,8 +27,7 @@ const Gallery = () => {
                                 <img src={photo1} alt='Image' className='img-fluid'/>
                                 <div className='photo-text-more'>
                                     <div className='photo-text-more'>
-                                        <h3 className='heading'><IoSearch /></h3>   
-                                
+                                        <h3 className='heading'><IoSearch /></h3>
                                     </div>
                                     
                                 </div>

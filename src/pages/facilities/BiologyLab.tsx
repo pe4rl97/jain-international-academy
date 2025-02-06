@@ -1,18 +1,18 @@
-import { Fancybox } from "@fancyapps/ui"
 import { useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { IoSearch } from "react-icons/io5"
 import { biologyPhoto1, biologyPhoto2, biologyPhoto3, biologyPhoto4 } from "../../assets/facilities/biology-lab"
 import '../../components/gallery/gallery.scss'
 import './facilities.scss'
+import { Fancybox } from "@fancyapps/ui"
 
 const BiologyLab = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
-    }, []);
-    useEffect(() => {
-        window.scrollTo(0,0);
     }, [])
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <Container className="facility-paragraph main-content">
             <h1 data-aos='fade-in' data-aos-delay='200'>Biology Lab: A Window to the Natural World</h1>
@@ -21,7 +21,7 @@ const BiologyLab = () => {
                     The Biology Lab offers students a hands-on experience to explore the diversity of life. It serves as a gateway to understanding microorganisms, plant specimens, and animal specimens. As students step into this vibrant learning space, they familiarize themselves with biodiversity, scientific classifications, and the role of each organism in the environment, reinforcing the need for conservation.
                 </p>
                 <p data-aos='fade-in' data-aos-delay='400'>
-                    Our well-equipped and well-lit lab accommodates up to 40 students, allowing them to perform various experiments simultaneously. Designed for students from classes VI to XII, it features preserved specimens, permanent slides, microscopes, chemicals, charts, and essential glassware for experiments and demonstrations. The lab also houses models of the human torso, skeleton, and organs, sparking students' curiosity about the human body. Additionally, students have the freedom to create models and projects using lab facilities, enhancing their practical understanding of biology.                </p>
+                    Our well-equipped and well-lit lab, allowing them to perform various experiments simultaneously. It features preserved specimens, permanent slides, microscopes, chemicals, charts, and essential glassware for experiments and demonstrations. The lab also houses models of the human torso, skeleton, and organs, sparking students' curiosity about the human body. Additionally, students have the freedom to create models and projects using lab facilities, enhancing their practical understanding of biology.                </p>
             </div>
             <Container className="photos">
                 <Row className="align-items-center justify-content-center">

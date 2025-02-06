@@ -1,26 +1,26 @@
-import { Fancybox } from "@fancyapps/ui"
 import { useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { IoSearch } from "react-icons/io5"
 import { mathsPhoto1, mathsPhoto2, mathsPhoto3 } from "../../assets/facilities/maths-lab"
 import '../../components/gallery/gallery.scss'
 import './facilities.scss'
+import { Fancybox } from "@fancyapps/ui"
 
 const MathsLab = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
-    }, []);
-    useEffect(() => {
-        window.scrollTo(0,0);
     }, [])
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <Container className="facility-paragraph main-content">
             <h1 data-aos='fade-in' data-aos-delay='200'>Math Lab: A Gateway to Mathematical Exploration</h1>
             <div className="my-4">
-                <p data-aos='fade-in' data-aos-delay='400'>
+                <p data-aos='fade-in' data-aos-delay='300'>
                     A math lab serves as an essential space in schools, offering students the opportunity to explore mathematical concepts beyond textbooks and lectures. It acts as a dynamic environment where theoretical ideas come to life through practical application. 
                 </p>
-                <p data-aos='fade-in'>
+                <p data-aos='fade-in' data-aos-delay='400'>
                 Equipped with tools such as measuring instruments, geometrical models, and interactive software, the math lab enables students to visualize and manipulate mathematical problems, helping them develop a deeper understanding of the subject. It fosters an engaging, hands-on approach that not only simplifies complex concepts but also cultivates critical thinking and problem-solving skills. The math lab encourages collaborative work, allowing students to experiment and learn together, making math an enjoyable and interactive experience.
                 </p>
             </div>

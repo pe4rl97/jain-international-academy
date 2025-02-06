@@ -1,21 +1,21 @@
-import { Fancybox } from "@fancyapps/ui"
 import { useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { IoSearch } from "react-icons/io5"
 import { musicPhoto1, musicPhoto2 } from "../../assets/facilities/music"
 import '../../components/gallery/gallery.scss'
 import './facilities.scss'
+import { Fancybox } from "@fancyapps/ui"
 
 const MathsLab = () => {
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {});
-    }, []);
-    useEffect(() => {
-        window.scrollTo(0,0);
     }, [])
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
         <Container className="facility-paragraph main-content">
-            <h1 data-aos='fade-in' data-aos-delay='200'>Music Room: A Harmonious Journey of Creativity and Expression</h1>
+            <h1 data-aos='fade-in' data-aos-delay='200'>Music: A Harmonious Journey of Creativity and Expression</h1>
             <div className="my-4 mb-5">
                 <p data-aos='fade-in' data-aos-delay='400'>
                     Music plays a vital role in a school, providing students with an outlet to explore and nurture their creative abilities. It serves as a powerful form of self-expression, allowing students to communicate emotions and ideas through sound. Music encourages both individual and collective creativity, fostering an environment where students can develop a deeper understanding of rhythm, melody, and harmony. It helps build discipline, focus, and teamwork, particularly through group performances and collaborative projects.

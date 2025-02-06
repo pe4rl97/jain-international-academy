@@ -6,6 +6,7 @@ import { MdEmail, MdPhone } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-transparentbg.png';
 import './footer.scss';
+import Tag97Logo from '../../assets/TAG97.png'
 
 const Footer = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -154,8 +155,8 @@ const Footer = () => {
                     </Row>
                     <hr className='text-white'/>
                     <p className='text-footer'>Designed & Maintained by 
-                        <a href="https://www.tag97.com/" target='_blank' className='text-decoration-none'>
-                            <span className='fw-bold tag-97-orange'>{' <TAG'}</span><span className='fw-bold tag-97-blue'>{' 97>'}</span>
+                        <a href="https://www.tag97.com/" target='_blank' className='text-decoration-none ms-2'>
+                            <img src={Tag97Logo} alt={'Tag97 Logo'} className='img-fluid' width={80} style={{marginTop: '-5px'}}/>
                         </a>
                     </p>
                 </Container>

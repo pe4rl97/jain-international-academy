@@ -12,7 +12,7 @@ export const StaffDetails: StaffMember[] = [
     {
         imageUrl: aartiChaturvedi,
         name: "Aarti Chaturvedi",
-        designation: "Vice Principal",
+        designation: "Principal",
         qualification: "M.A., M. Ed",
         experience: "17 years",
     },
