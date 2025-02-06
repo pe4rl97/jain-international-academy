@@ -16,13 +16,13 @@ const Certificate = () => {
 
     // Extract query parameters from the URL
     const params = new URLSearchParams(location.search);
-    const name = params.get("name") || "";
-    const imagelink = params.get("imageLink") || "";
-    const pdflink = params.get("pdfLink") || "";
+    const name = params.get("name");
+    const imagelink = params.get("imageLink");
+    const pdflink = params.get("pdfLink");
 
-    setPdfName(name);
-    setImageLink(imagelink);
-    setPdfLink(pdflink);
+    setPdfName(name!);
+    setImageLink(imagelink!);
+    setPdfLink(pdflink!);
 
     if (name === "Mandatory Disclosure Details") {
       setIsMandatoryDisclosure(true);
@@ -39,9 +39,11 @@ const Certificate = () => {
           <h1 className="mb-4 pdf-name-title"><span className="bg-white">{pdfName}</span></h1>
           <Row className="justify-content-center">
             <Col md={6}>
-              <a href={pdfLink} target="_blank" rel="noopener noreferrer">
-                <Image src={imageLink} alt={pdfName} fluid className={`shadow certificate-img ${isMandatoryDisclosure ? "mb-4" : ""}`}/>
-              </a>
+              {imageLink && 
+                <a href={pdfLink} target="_blank" rel="noopener noreferrer">
+                  <Image src={imageLink} alt={pdfName} fluid className={`shadow certificate-img ${isMandatoryDisclosure ? "mb-4" : ""}`}/>
+                </a>
+              }
               <p className="text-muted mt-3">*Click the image to open/download the PDF file.</p>
             </Col>
           </Row>

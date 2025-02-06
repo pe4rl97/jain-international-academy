@@ -27,6 +27,8 @@
         left: 1px;
         border-radius: 25px;
         transition: all 0.3s;
+        will-change: transform, box-shadow;
+        transform: translateZ(0);
     }
 
     &:hover::before {

@@ -12,7 +12,7 @@ const AboutUs = () => {
       <div className="about-us-div">
         {/* about us start   */}
         <Container className="about-us-container rounded">
-          <div className="container-xxl py-5">
+          <div className="container-xxl py-lg-5 py-md-0">
             <div className="container">
               <div className="row g-5 align-items-center">
                 <div className="col-lg-6" >

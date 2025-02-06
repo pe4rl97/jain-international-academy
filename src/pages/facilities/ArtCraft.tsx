@@ -4,8 +4,12 @@ import { IoSearch } from "react-icons/io5"
 import { artPhoto1, artPhoto10, artPhoto11, artPhoto12, artPhoto13, artPhoto2, artPhoto3, artPhoto4, artPhoto5, artPhoto6, artPhoto7, artPhoto8, artPhoto9 } from "../../assets/facilities/art-craft"
 import '../../components/gallery/gallery.scss'
 import './facilities.scss'
+import { Fancybox } from "@fancyapps/ui"
 
 const ArtCraft = () => {
+    useEffect(() => {
+        Fancybox.bind('[data-fancybox="gallery"]', {});
+    }, [])
     useEffect(() => {
         window.scrollTo(0,0);
     }, [])

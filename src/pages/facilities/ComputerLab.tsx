@@ -8,7 +8,12 @@ import { Fancybox } from "@fancyapps/ui"
 
 const ComputerLab = () => {
     useEffect(() => {
-        Fancybox.bind('[data-fancybox="gallery"]', {});
+        const gallerySelector = '[data-fancybox="gallery"]';
+        Fancybox.bind(gallerySelector, {});
+        return () => {
+            Fancybox.close();
+            Fancybox.unbind(gallerySelector);
+        }
     }, [])
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });

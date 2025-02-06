@@ -38,3 +38,13 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .happening-now-wrapper-div {
+        margin-top: 40px;
+        padding-bottom: 54px;
+        .happening-now-wrapper {
+            padding-top: 70px;
+        }
+    }
+}

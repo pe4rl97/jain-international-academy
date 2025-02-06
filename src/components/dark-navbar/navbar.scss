@@ -61,7 +61,7 @@
 .page-header::after {
     height: 19px;
     top: auto;
-    bottom: 0;
+    bottom: -1px;
     background: url('../../assets/header/bg-header-bottom.png') center center repeat-x;
 }
 
