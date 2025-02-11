@@ -41,14 +41,14 @@ export const StaffDetails: StaffMember[] = [
         imageUrl: dimpalRavat,
         name: "Dimpal Ravat",
         designation: "Ass. Teacher",
-        qualification: "P.T.C., B.A., E.Ed",
+        qualification: "P.T.C., B.A., B.Ed",
         experience: "10 years",
     },
     {
         imageUrl: kaminiPatel,
         name: "Kamini Patel",
         designation: "Ass. Teacher",
-        qualification: "M.A., E.Ed",
+        qualification: "M.A., B.Ed",
         experience: "12 years",
     },
     {
